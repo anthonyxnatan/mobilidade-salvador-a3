@@ -5,7 +5,7 @@ Professor: **Eduardo Sidney da Silva Xavier**. Entrega final: 03/12/2026.
 
 | Entrega | Link |
 |---|---|
-| Dashboard interativo (Streamlit) | [inserir o link do Streamlit] |
+| Dashboard interativo (Streamlit) | https://mobilidade-salvador.streamlit.app |
 | Vídeo de apresentação (YouTube) | [inserir o link do YouTube] |
 | Relatório final (ETL, EDA, diagnóstico, previsões e prescrições) | [PDF](relatorios/Relatorio_Final_A3.pdf) · [Word](relatorios/Relatorio_Final_A3.docx) |
 | Notebook de ETL | [notebooks/01_ETL.ipynb](notebooks/01_ETL.ipynb) |
@@ -99,7 +99,7 @@ streamlit run app/streamlit_app.py         # abre o dashboard em http://localhos
 2. Clique em **Create app → Deploy a public app from GitHub**.
 3. Escolha este repositório, a branch `main` e o arquivo principal `app/streamlit_app.py`.
 4. Clique em **Deploy**. Em 2 ou 3 minutos o painel fica no ar.
-5. Copie o endereço gerado e cole na tabela do topo deste README.
+5. O painel está publicado em https://mobilidade-salvador.streamlit.app.
 
 ## Principais números
 
