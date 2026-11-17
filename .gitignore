@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+# pasta criada pelo ETL ao abrir o .rar de 2015 (é recriada a cada execução)
+data/raw/senatran/*_extraido/

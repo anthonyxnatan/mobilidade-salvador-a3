@@ -1,0 +1,112 @@
+tabela,coluna,tipo,descricao
+base_salvador_anual,ano,int64,Ano de referência
+base_salvador_anual,populacao,int64,População residente compatibilizada (IBGE; ver seção 2)
+base_salvador_anual,pop_estimativa_oficial,float64,Estimativa oficial do IBGE publicada para o ano (sem compatibilização)
+base_salvador_anual,metodo_pop,str,Como a população do ano foi obtida
+base_salvador_anual,autos,float64,"Veículos leves emplacados (SENATRAN, dezembro)"
+base_salvador_anual,motos,float64,"Motocicletas, motonetas e ciclomotores emplacados (SENATRAN, dezembro)"
+base_salvador_anual,onibus_registrados,float64,"Ônibus + micro-ônibus emplacados no município (SENATRAN), inclui fretamento"
+base_salvador_anual,autos_por_mil_hab,float64,Autos por 1.000 habitantes
+base_salvador_anual,motos_por_mil_hab,float64,Motos por 1.000 habitantes
+base_salvador_anual,motorizacao_por_mil_hab,float64,(Autos + motos) por 1.000 habitantes
+base_salvador_anual,tarifa_media_ano,float64,Tarifa do ônibus ponderada pelos dias de vigência no ano (R$ correntes)
+base_salvador_anual,tarifa_dezembro,float64,Tarifa vigente em 31/dez (R$)
+base_salvador_anual,tarifa_real_dez2025,float64,Tarifa média do ano em R$ de dez/2025 (IPCA)
+base_salvador_anual,metro_passageiros_ano,float64,Passageiros do metrô no ano (Cia. do Metrô da Bahia / CTB)
+base_salvador_anual,metro_precisao,str,Precisão declarada pela fonte (exato ou aproximado)
+base_salvador_anual,brt_frota_operacional,float64,Ônibus em operação no BRT (Prefeitura)
+base_salvador_anual,brt_passageiros_dia_util,float64,Passageiros do BRT por dia útil (SEMOB)
+base_salvador_anual,stco_frota_operacional,float64,Frota operacional do STCO segundo a Prefeitura (relatórios e anúncios oficiais)
+base_salvador_anual,stco_idade_media_frota,float64,"Idade média da frota do STCO, anos (SEMOB)"
+base_salvador_anual,stco_linhas,float64,Número de linhas do STCO (Prefeitura)
+base_salvador_anual,stco_passageiros_dia_semob,float64,Passageiros por dia do STCO (SEMOB)
+base_salvador_anual,stco_passageiros_mes,float64,Passageiros do STCO por mês (Relatório de Atividades da Prefeitura)
+base_salvador_anual,stco_viagens_mes,float64,Viagens de ônibus realizadas por mês (Relatório de Atividades da Prefeitura)
+base_salvador_anual,pemob_frota_onibus_operacional,float64,Frota operacional de ônibus do sistema municipal (PEMOB)
+base_salvador_anual,pemob_km_onibus_ano,float64,Quilômetros rodados pela frota de ônibus no ano (PEMOB)
+base_salvador_anual,pemob_velocidade_trafego_misto_pico,float64,"Velocidade média dos ônibus em tráfego misto no pico, km/h (PEMOB)"
+base_salvador_anual,pemob_velocidade_corredores_pico,float64,"Velocidade média nos corredores de ônibus no pico, km/h (PEMOB)"
+base_salvador_anual,pemob_idade_media_frota,float64,"Idade média da frota de ônibus, anos (PEMOB)"
+base_salvador_anual,pemob_viagens_nao_completadas_pct,float64,"Viagens de ônibus programadas e não completadas, % (PEMOB)"
+base_salvador_anual,pemob_passageiros_equivalentes_onibus,float64,Passageiros equivalentes no ano = receita ÷ tarifa (PEMOB)
+base_salvador_anual,metro_passageiros_por_hab,float64,Viagens de metrô por habitante no ano
+base_salvador_anual,stco_onibus_por_100mil_hab,float64,Ônibus operacionais (PEMOB) por 100 mil habitantes
+base_salvador_anual,hab_por_linha,float64,Habitantes por linha de ônibus
+base_salvador_anual,pandemia,int64,1 = anos de pandemia (2020-2021)
+base_salvador_anual,metro_em_operacao,int64,1 = metrô em operação
+base_salvador_anual,brt_em_operacao,int64,1 = BRT em operação
+base_salvador_anual,fase,str,Período histórico
+base_salvador_mensal,data,datetime64[us],Primeiro dia do mês de referência
+base_salvador_mensal,ano,int32,Ano de referência
+base_salvador_mensal,mes,int32,Mês de referência (1 a 12)
+base_salvador_mensal,indice_onibus_urbanos,float64,"Índice de passageiros de ônibus urbanos, média 2022 = 100 (SEI-BA/IMEC)"
+base_salvador_mensal,indice_onibus_2024_100,float64,Mesmo índice rebaseado para média de 2024 = 100
+base_salvador_mensal,metro_passageiros_mes,float64,Passageiros do metrô no mês (CTB)
+base_salvador_mensal,indice_metro_2024_100,float64,"Metrô em índice, média 2024 = 100"
+base_salvador_mensal,tarifa_vigente,float64,Tarifa média vigente no mês (R$)
+painel_capitais_anual,cod_ibge,int64,Código IBGE do município (7 dígitos)
+painel_capitais_anual,municipio,str,Nome do município
+painel_capitais_anual,uf,str,Sigla da UF
+painel_capitais_anual,regiao,str,Grande região (IBGE)
+painel_capitais_anual,ano,int64,Ano de referência
+painel_capitais_anual,populacao,int64,População residente compatibilizada (IBGE; ver seção 2)
+painel_capitais_anual,densidade_2022,float64,Habitantes por km² (Censo 2022)
+painel_capitais_anual,frota_total,int64,Todos os veículos emplacados (SENATRAN)
+painel_capitais_anual,automovel,int64,Somente automóveis (SENATRAN)
+painel_capitais_anual,autos,int64,"Veículos leves emplacados (SENATRAN, dezembro)"
+painel_capitais_anual,motos,int64,"Motocicletas, motonetas e ciclomotores emplacados (SENATRAN, dezembro)"
+painel_capitais_anual,onibus_registrados,int64,"Ônibus + micro-ônibus emplacados no município (SENATRAN), inclui fretamento"
+painel_capitais_anual,autos_por_mil_hab,float64,Autos por 1.000 habitantes
+painel_capitais_anual,motos_por_mil_hab,float64,Motos por 1.000 habitantes
+painel_capitais_anual,motorizacao_por_mil_hab,float64,(Autos + motos) por 1.000 habitantes
+painel_capitais_anual,onibus_reg_por_100mil_hab,float64,Ônibus emplacados por 100 mil hab.
+painel_capitais_anual,var_pop_desde_2014_pct,float64,"Variação da população desde 2014, %"
+painel_capitais_anual,var_motorizacao_desde_2014_pct,float64,"Variação da motorização desde 2014, %"
+painel_capitais_anual,var_frota_autos_motos_desde_2014_pct,float64,"Variação do número de autos + motos desde 2014, %"
+pemob_capitais,cod_ibge,int64,Código IBGE do município (7 dígitos)
+pemob_capitais,frota_onibus_convencional,float64,Ônibus convencionais do sistema municipal (PEMOB)
+pemob_capitais,frota_onibus_articulado,float64,Ônibus articulados (PEMOB)
+pemob_capitais,frota_onibus_biarticulado,float64,Ônibus biarticulados (PEMOB)
+pemob_capitais,frota_micro_vans,float64,Micro-ônibus e vans do sistema municipal (PEMOB)
+pemob_capitais,km_onibus_ano,float64,Km rodados pelos ônibus no ano (PEMOB)
+pemob_capitais,velocidade_brt_pico,float64,"Velocidade do BRT no pico, km/h (PEMOB)"
+pemob_capitais,velocidade_corredores_pico,float64,"Velocidade nos corredores no pico, km/h (PEMOB)"
+pemob_capitais,velocidade_trafego_misto_pico,float64,"Velocidade em tráfego misto no pico, km/h (PEMOB)"
+pemob_capitais,idade_media_frota,float64,"Idade média da frota, anos (PEMOB)"
+pemob_capitais,tarifa_pemob,float64,Tarifa declarada na PEMOB (R$)
+pemob_capitais,receita_tarifaria_onibus,float64,"Receita tarifária anual dos ônibus, R$ (PEMOB)"
+pemob_capitais,passageiros_equivalentes_onibus,float64,Passageiros equivalentes no ano = receita ÷ tarifa (PEMOB)
+pemob_capitais,ano,int64,Ano de referência
+pemob_capitais,edicao_pemob,int64,Edição da PEMOB (ano de publicação)
+pemob_capitais,frota_onibus_operacional,float64,Ônibus convencionais + articulados + biarticulados (PEMOB)
+pemob_capitais,viagens_nao_completadas_pct,float64,"Viagens programadas e não completadas, % (PEMOB)"
+pemob_capitais,municipio,str,Nome do município
+pemob_capitais,populacao,int64,População residente compatibilizada (IBGE; ver seção 2)
+pemob_capitais,onibus_operacionais_por_100mil_hab,float64,Ônibus operacionais por 100 mil hab.
+pemob_capitais,pass_equiv_por_hab_ano,float64,Passageiros equivalentes por habitante no ano
+pemob_capitais,km_onibus_por_hab_ano,float64,Km rodados pelos ônibus por habitante no ano
+pemob_capitais,pass_equiv_por_onibus_dia,float64,Passageiros equivalentes por ônibus por dia
+deslocamento_capitais_censo,cod_ibge,int64,Código IBGE do município (7 dígitos)
+deslocamento_capitais_censo,municipio,str,Nome do município
+deslocamento_capitais_censo,pct_onibus,float64,% dos trabalhadores que vão de ônibus (Censo 2022)
+deslocamento_capitais_censo,pct_brt,float64,% que vão de BRT (Censo 2022)
+deslocamento_capitais_censo,pct_trem_metro,float64,% que vão de trem ou metrô (Censo 2022)
+deslocamento_capitais_censo,pct_automovel,float64,% que vão de automóvel (Censo 2022)
+deslocamento_capitais_censo,pct_moto,float64,% que vão de moto (Censo 2022)
+deslocamento_capitais_censo,pct_a_pe,float64,% que vão a pé (Censo 2022)
+deslocamento_capitais_censo,pct_bicicleta,float64,% que vão de bicicleta (Censo 2022)
+deslocamento_capitais_censo,pct_coletivo,float64,% em transporte coletivo: ônibus + BRT + trem/metrô + van (Censo 2022)
+deslocamento_capitais_censo,pct_individual_motorizado,float64,% em automóvel + moto + mototáxi + táxi (Censo 2022)
+deslocamento_capitais_censo,pct_ativo,float64,% a pé ou de bicicleta (Censo 2022)
+deslocamento_capitais_censo,trabalhadores_que_se_deslocam,float64,Trabalhadores que saem de casa para trabalhar (Censo 2022)
+deslocamento_capitais_censo,pct_2010_1h_2h,float64,% de 1 h a 2 h (Censo 2010)
+deslocamento_capitais_censo,pct_2010_30min_1h,float64,% de 30 min a 1 h (Censo 2010)
+deslocamento_capitais_censo,pct_2010_ate_30min,float64,% com viagem de até 30 min (Censo 2010)
+deslocamento_capitais_censo,pct_2010_mais_2h,float64,% com mais de 2 h (Censo 2010)
+deslocamento_capitais_censo,pct_2022_1h_2h,float64,% de 1 h a 2 h (Censo 2022)
+deslocamento_capitais_censo,pct_2022_30min_1h,float64,% de 30 min a 1 h (Censo 2022)
+deslocamento_capitais_censo,pct_2022_ate_30min,float64,% com viagem de até 30 min (Censo 2022)
+deslocamento_capitais_censo,pct_2022_mais_2h,float64,% com mais de 2 h (Censo 2022)
+deslocamento_capitais_censo,tempo_medio_2022_min,float64,"Tempo médio casa-trabalho, min (ponto médio das faixas, Censo 2022)"
+deslocamento_capitais_censo,pct_mais_1h_2010,float64,% com viagem de mais de 1 h (Censo 2010)
+deslocamento_capitais_censo,pct_mais_1h_2022,float64,% com viagem de mais de 1 h (Censo 2022)

@@ -1,0 +1,183 @@
+cod_ibge,meio_transporte,trabalhadores,tempo_medio_min,municipio
+1302603,A pé,66915.0,20.414750056041246,Manaus
+1302603,Automóvel,172397.0,32.9436011067478,Manaus
+1302603,BRT ou ônibus de trânsito rápido,2963.0,57.3574080323996,Manaus
+1302603,Bicicleta,3445.0,32.94818577648766,Manaus
+1302603,Caminhonete ou caminhão adaptado (pau de arara),730.0,66.06575342465753,Manaus
+1302603,Embarcação de médio e grande porte (acima de 20 pessoas),834.0,46.839928057553955,Manaus
+1302603,Embarcação de pequeno porte (até 20 pessoas),1090.0,59.26926605504587,Manaus
+1302603,Motocicleta,50962.0,31.90915780385385,Manaus
+1302603,Mototáxi,8158.0,31.94937484677617,Manaus
+1302603,Outros,7742.0,53.168238181348485,Manaus
+1302603,Trem ou metrô,0.0,,Manaus
+1302603,Táxi ou assemelhados,8020.0,28.79569825436409,Manaus
+1302603,"Van, perua ou assemelhados",16563.0,49.55977178047455,Manaus
+1302603,Ônibus,238146.0,58.3962548184727,Manaus
+1501402,A pé,51263.0,16.972328970212434,Belém
+1501402,Automóvel,97072.0,29.01714706609527,Belém
+1501402,BRT ou ônibus de trânsito rápido,1737.0,53.20898100172712,Belém
+1501402,Bicicleta,48971.0,27.579649180127014,Belém
+1501402,Caminhonete ou caminhão adaptado (pau de arara),156.0,58.84615384615385,Belém
+1501402,Embarcação de médio e grande porte (acima de 20 pessoas),1054.0,72.08823529411765,Belém
+1501402,Embarcação de pequeno porte (até 20 pessoas),1124.0,52.16103202846975,Belém
+1501402,Motocicleta,37713.0,27.577837880836846,Belém
+1501402,Mototáxi,6755.0,28.00037009622502,Belém
+1501402,Outros,1490.0,46.33691275167785,Belém
+1501402,Trem ou metrô,0.0,,Belém
+1501402,Táxi ou assemelhados,6751.0,27.274625981336097,Belém
+1501402,"Van, perua ou assemelhados",2612.0,41.58594946401225,Belém
+1501402,Ônibus,146579.0,50.66007750086984,Belém
+2111300,A pé,48006.0,18.124015748031496,São Luís
+2111300,Automóvel,109354.0,27.561323774164638,São Luís
+2111300,BRT ou ônibus de trânsito rápido,0.0,,São Luís
+2111300,Bicicleta,14238.0,27.79393173198483,São Luís
+2111300,Caminhonete ou caminhão adaptado (pau de arara),291.0,41.38659793814433,São Luís
+2111300,Embarcação de médio e grande porte (acima de 20 pessoas),353.0,83.0014164305949,São Luís
+2111300,Embarcação de pequeno porte (até 20 pessoas),42.0,59.464285714285715,São Luís
+2111300,Motocicleta,36799.0,29.4893339492921,São Luís
+2111300,Mototáxi,2483.0,31.512082158679018,São Luís
+2111300,Outros,1192.0,42.351090604026844,São Luís
+2111300,Trem ou metrô,23.0,45.0,São Luís
+2111300,Táxi ou assemelhados,2966.0,27.2993931220499,São Luís
+2111300,"Van, perua ou assemelhados",2940.0,45.329081632653065,São Luís
+2111300,Ônibus,143141.0,53.14436464744553,São Luís
+2304400,A pé,110373.0,16.368364545676933,Fortaleza
+2304400,Automóvel,231606.0,29.917379083443436,Fortaleza
+2304400,BRT ou ônibus de trânsito rápido,2366.0,47.070583262890956,Fortaleza
+2304400,Bicicleta,57161.0,28.61228809852872,Fortaleza
+2304400,Caminhonete ou caminhão adaptado (pau de arara),849.0,49.51590106007067,Fortaleza
+2304400,Embarcação de médio e grande porte (acima de 20 pessoas),102.0,64.80882352941177,Fortaleza
+2304400,Embarcação de pequeno porte (até 20 pessoas),0.0,,Fortaleza
+2304400,Motocicleta,114952.0,30.161780569281092,Fortaleza
+2304400,Mototáxi,7196.0,30.536756531406336,Fortaleza
+2304400,Outros,2927.0,42.763580457806626,Fortaleza
+2304400,Trem ou metrô,5137.0,46.07455713451431,Fortaleza
+2304400,Táxi ou assemelhados,9664.0,27.731063741721854,Fortaleza
+2304400,"Van, perua ou assemelhados",3680.0,49.863586956521736,Fortaleza
+2304400,Ônibus,235080.0,57.537914752424705,Fortaleza
+2611606,A pé,72620.0,17.986202148168548,Recife
+2611606,Automóvel,163519.0,30.970034063319858,Recife
+2611606,BRT ou ônibus de trânsito rápido,3956.0,54.98887765419616,Recife
+2611606,Bicicleta,35338.0,27.63713283151282,Recife
+2611606,Caminhonete ou caminhão adaptado (pau de arara),588.0,60.816326530612244,Recife
+2611606,Embarcação de médio e grande porte (acima de 20 pessoas),22.0,45.0,Recife
+2611606,Embarcação de pequeno porte (até 20 pessoas),254.0,61.03346456692913,Recife
+2611606,Motocicleta,36183.0,29.02441754415057,Recife
+2611606,Mototáxi,3355.0,29.72682563338301,Recife
+2611606,Outros,1955.0,51.76112531969309,Recife
+2611606,Trem ou metrô,5111.0,58.72070045000978,Recife
+2611606,Táxi ou assemelhados,7540.0,27.34794429708223,Recife
+2611606,"Van, perua ou assemelhados",1904.0,48.11738445378151,Recife
+2611606,Ônibus,163153.0,55.60605995599223,Recife
+2927408,A pé,123804.0,21.007487641756324,Salvador
+2927408,Automóvel,212342.0,32.46904286481242,Salvador
+2927408,BRT ou ônibus de trânsito rápido,6016.0,63.174783909574465,Salvador
+2927408,Bicicleta,10321.0,32.74333882375739,Salvador
+2927408,Caminhonete ou caminhão adaptado (pau de arara),885.0,58.83898305084746,Salvador
+2927408,Embarcação de médio e grande porte (acima de 20 pessoas),484.0,90.0495867768595,Salvador
+2927408,Embarcação de pequeno porte (até 20 pessoas),923.0,47.523835319609965,Salvador
+2927408,Motocicleta,30072.0,31.040253391859537,Salvador
+2927408,Mototáxi,4579.0,29.19709543568465,Salvador
+2927408,Outros,3148.0,47.6821791613723,Salvador
+2927408,Trem ou metrô,18131.0,49.12555843582814,Salvador
+2927408,Táxi ou assemelhados,9313.0,29.640341458176742,Salvador
+2927408,"Van, perua ou assemelhados",6687.0,53.03297442799462,Salvador
+2927408,Ônibus,364185.0,59.16059557642407,Salvador
+3106200,A pé,125846.0,18.002133560065477,Belo Horizonte
+3106200,Automóvel,314116.0,30.81325370245387,Belo Horizonte
+3106200,BRT ou ônibus de trânsito rápido,9334.0,64.46512749089351,Belo Horizonte
+3106200,Bicicleta,6286.0,29.590041361756285,Belo Horizonte
+3106200,Caminhonete ou caminhão adaptado (pau de arara),1536.0,44.2099609375,Belo Horizonte
+3106200,Embarcação de médio e grande porte (acima de 20 pessoas),285.0,66.02631578947368,Belo Horizonte
+3106200,Embarcação de pequeno porte (até 20 pessoas),110.0,65.72727272727273,Belo Horizonte
+3106200,Motocicleta,57983.0,29.27924564096373,Belo Horizonte
+3106200,Mototáxi,2461.0,32.418529053230394,Belo Horizonte
+3106200,Outros,3140.0,49.71783439490446,Belo Horizonte
+3106200,Trem ou metrô,7522.0,52.46829300717894,Belo Horizonte
+3106200,Táxi ou assemelhados,12047.0,26.42587366149249,Belo Horizonte
+3106200,"Van, perua ou assemelhados",3496.0,48.16004004576659,Belo Horizonte
+3106200,Ônibus,335762.0,57.69543903121854,Belo Horizonte
+3304557,A pé,267242.0,18.381732661782205,Rio de Janeiro
+3304557,Automóvel,502252.0,42.423650876452456,Rio de Janeiro
+3304557,BRT ou ônibus de trânsito rápido,86535.0,84.81625931703935,Rio de Janeiro
+3304557,Bicicleta,58479.0,26.72795362437798,Rio de Janeiro
+3304557,Caminhonete ou caminhão adaptado (pau de arara),2038.0,59.48478900883219,Rio de Janeiro
+3304557,Embarcação de médio e grande porte (acima de 20 pessoas),1400.0,79.25142857142858,Rio de Janeiro
+3304557,Embarcação de pequeno porte (até 20 pessoas),521.0,52.45969289827255,Rio de Janeiro
+3304557,Motocicleta,67899.0,32.83504175319224,Rio de Janeiro
+3304557,Mototáxi,11362.0,31.308176377398347,Rio de Janeiro
+3304557,Outros,10795.0,55.682167670217694,Rio de Janeiro
+3304557,Trem ou metrô,177349.0,64.20027741910019,Rio de Janeiro
+3304557,Táxi ou assemelhados,35916.0,33.62817407283662,Rio de Janeiro
+3304557,"Van, perua ou assemelhados",55058.0,46.62829198299975,Rio de Janeiro
+3304557,Ônibus,712624.0,63.749846342531264,Rio de Janeiro
+3550308,A pé,496380.0,17.831373141544784,São Paulo
+3550308,Automóvel,1214089.0,38.76064522452637,São Paulo
+3550308,BRT ou ônibus de trânsito rápido,15653.0,68.55046955855107,São Paulo
+3550308,Bicicleta,41561.0,28.792341377733933,São Paulo
+3550308,Caminhonete ou caminhão adaptado (pau de arara),6614.0,54.5388569700635,São Paulo
+3550308,Embarcação de médio e grande porte (acima de 20 pessoas),952.0,58.04149159663866,São Paulo
+3550308,Embarcação de pequeno porte (até 20 pessoas),698.0,65.74641833810888,São Paulo
+3550308,Motocicleta,169696.0,35.821551480294175,São Paulo
+3550308,Mototáxi,9752.0,42.54881050041017,São Paulo
+3550308,Outros,17802.0,60.38692281766094,São Paulo
+3550308,Trem ou metrô,458549.0,69.99025731165044,São Paulo
+3550308,Táxi ou assemelhados,33724.0,34.466107223342426,São Paulo
+3550308,"Van, perua ou assemelhados",23469.0,53.76230346414419,São Paulo
+3550308,Ônibus,1512585.0,67.22014101686847,São Paulo
+4106902,A pé,78360.0,15.353809341500765,Curitiba
+4106902,Automóvel,356601.0,26.37676142243011,Curitiba
+4106902,BRT ou ônibus de trânsito rápido,3100.0,50.15129032258064,Curitiba
+4106902,Bicicleta,19641.0,25.59485260424622,Curitiba
+4106902,Caminhonete ou caminhão adaptado (pau de arara),1521.0,38.16173570019724,Curitiba
+4106902,Embarcação de médio e grande porte (acima de 20 pessoas),381.0,25.19291338582677,Curitiba
+4106902,Embarcação de pequeno porte (até 20 pessoas),193.0,46.398963730569946,Curitiba
+4106902,Motocicleta,35417.0,25.85639664567863,Curitiba
+4106902,Mototáxi,1012.0,29.21294466403162,Curitiba
+4106902,Outros,3000.0,38.226,Curitiba
+4106902,Trem ou metrô,0.0,,Curitiba
+4106902,Táxi ou assemelhados,6200.0,23.43991935483871,Curitiba
+4106902,"Van, perua ou assemelhados",6012.0,44.70184630738523,Curitiba
+4106902,Ônibus,189974.0,51.5968527272153,Curitiba
+4314902,A pé,61894.0,15.854040779397033,Porto Alegre
+4314902,Automóvel,196721.0,27.983756182613956,Porto Alegre
+4314902,BRT ou ônibus de trânsito rápido,1091.0,46.07791017415215,Porto Alegre
+4314902,Bicicleta,10232.0,25.07926114151681,Porto Alegre
+4314902,Caminhonete ou caminhão adaptado (pau de arara),540.0,42.34722222222222,Porto Alegre
+4314902,Embarcação de médio e grande porte (acima de 20 pessoas),101.0,71.2871287128713,Porto Alegre
+4314902,Embarcação de pequeno porte (até 20 pessoas),122.0,48.282786885245905,Porto Alegre
+4314902,Motocicleta,18341.0,27.76844228777057,Porto Alegre
+4314902,Mototáxi,852.0,28.588028169014084,Porto Alegre
+4314902,Outros,1885.0,36.177453580901854,Porto Alegre
+4314902,Trem ou metrô,2428.0,66.94028006589785,Porto Alegre
+4314902,Táxi ou assemelhados,14501.0,23.001792979794498,Porto Alegre
+4314902,"Van, perua ou assemelhados",3188.0,43.43742158092848,Porto Alegre
+4314902,Ônibus,180621.0,48.94945770425366,Porto Alegre
+5208707,A pé,64060.0,15.551436153605994,Goiânia
+5208707,Automóvel,272704.0,25.79512218375968,Goiânia
+5208707,BRT ou ônibus de trânsito rápido,1168.0,50.111301369863014,Goiânia
+5208707,Bicicleta,24783.0,26.177339305168864,Goiânia
+5208707,Caminhonete ou caminhão adaptado (pau de arara),1082.0,45.10120147874307,Goiânia
+5208707,Embarcação de médio e grande porte (acima de 20 pessoas),244.0,40.85655737704918,Goiânia
+5208707,Embarcação de pequeno porte (até 20 pessoas),137.0,26.529197080291972,Goiânia
+5208707,Motocicleta,82205.0,27.588449607688098,Goiânia
+5208707,Mototáxi,3643.0,31.081663464177876,Goiânia
+5208707,Outros,2754.0,35.980936819172115,Goiânia
+5208707,Trem ou metrô,0.0,,Goiânia
+5208707,Táxi ou assemelhados,7214.0,22.17854172442473,Goiânia
+5208707,"Van, perua ou assemelhados",1165.0,35.66137339055794,Goiânia
+5208707,Ônibus,92569.0,57.07231902688805,Goiânia
+5300108,A pé,93546.0,15.598839073824642,Brasília
+5300108,Automóvel,508581.0,28.375721861414405,Brasília
+5300108,BRT ou ônibus de trânsito rápido,17838.0,62.9558526740666,Brasília
+5300108,Bicicleta,26940.0,24.59933184855234,Brasília
+5300108,Caminhonete ou caminhão adaptado (pau de arara),1390.0,38.53920863309352,Brasília
+5300108,Embarcação de médio e grande porte (acima de 20 pessoas),193.0,36.80051813471503,Brasília
+5300108,Embarcação de pequeno porte (até 20 pessoas),57.0,44.13157894736842,Brasília
+5300108,Motocicleta,41592.0,28.87619013271783,Brasília
+5300108,Mototáxi,2522.0,30.675654242664553,Brasília
+5300108,Outros,3412.0,39.2123388042204,Brasília
+5300108,Trem ou metrô,31973.0,50.13878897820036,Brasília
+5300108,Táxi ou assemelhados,4585.0,24.733478735005452,Brasília
+5300108,"Van, perua ou assemelhados",2639.0,37.61652140962486,Brasília
+5300108,Ônibus,358713.0,55.66490620635438,Brasília

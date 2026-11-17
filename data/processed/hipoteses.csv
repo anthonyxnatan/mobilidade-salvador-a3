@@ -1,0 +1,7 @@
+id,hipótese,resultado,evidência
+H1,O metrô absorveu passageiros do ônibus,Parcialmente confirmada,Ganho do metrô explica no máximo 11% da perda do ônibus; parte das viagens de metrô é integrada com ônibus
+H2,Carros e motos cresceram e tiraram usuários do coletivo,Confirmada (associação),"Motorização +16% (2019–2024) e +46% desde 2014, com população em queda; motos quase dobraram"
+H3,A tarifa ficou mais cara acima da inflação,Fraca / parcialmente,"Tarifa real de R$ 5,24 (2014) para R$ 5,68 (2025): +8% em 11 anos"
+H4,A pandemia provocou uma quebra estrutural,Confirmada,Metrô recuperou e bateu recorde em 2024; ônibus seguia cerca de 17% abaixo de 2019 em 2024
+H5,A queda da população explica a queda da demanda,Rejeitada como causa principal,"População caiu cerca de 2,9% (2019–2024), explica só 17% da perda de passageiros"
+H6,O ônibus ficou mais lento (congestionamento),Confirmada (2022→2025),"Velocidade no pico em tráfego misto: 21,5 → 16,5 km/h (-23%); BRT a 22,2 km/h"

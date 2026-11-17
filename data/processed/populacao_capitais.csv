@@ -1,0 +1,222 @@
+ano,populacao,cod_ibge,metodo_pop,pop_estimativa_oficial,municipio
+2010,2675656,2927408,censo,,Salvador
+2011,2653145,2927408,interpolacao_intercensitaria,2693606.0,Salvador
+2012,2630823,2927408,interpolacao_intercensitaria,2710968.0,Salvador
+2013,2608689,2927408,interpolacao_intercensitaria,2883682.0,Salvador
+2014,2586741,2927408,interpolacao_intercensitaria,2902927.0,Salvador
+2015,2564978,2927408,interpolacao_intercensitaria,2921087.0,Salvador
+2016,2543398,2927408,interpolacao_intercensitaria,2938092.0,Salvador
+2017,2522000,2927408,interpolacao_intercensitaria,2953986.0,Salvador
+2018,2500781,2927408,interpolacao_intercensitaria,2857329.0,Salvador
+2019,2479742,2927408,interpolacao_intercensitaria,2872347.0,Salvador
+2020,2458879,2927408,interpolacao_intercensitaria,2886698.0,Salvador
+2021,2438191,2927408,interpolacao_intercensitaria,2900319.0,Salvador
+2022,2417678,2927408,censo,,Salvador
+2023,2413232,2927408,censo2022_x_taxa_estimativas,,Salvador
+2024,2408794,2927408,censo2022_x_taxa_estimativas,2568928.0,Salvador
+2025,2404365,2927408,censo2022_x_taxa_estimativas,2564204.0,Salvador
+2026,2400371,2927408,censo2022_x_taxa_estimativas,2559945.0,Salvador
+2010,11253503,3550308,censo,,São Paulo
+2011,11269912,3550308,interpolacao_intercensitaria,11316119.0,São Paulo
+2012,11286345,3550308,interpolacao_intercensitaria,11376685.0,São Paulo
+2013,11302802,3550308,interpolacao_intercensitaria,11821873.0,São Paulo
+2014,11319283,3550308,interpolacao_intercensitaria,11895893.0,São Paulo
+2015,11335788,3550308,interpolacao_intercensitaria,11967825.0,São Paulo
+2016,11352317,3550308,interpolacao_intercensitaria,12038175.0,São Paulo
+2017,11368870,3550308,interpolacao_intercensitaria,12106920.0,São Paulo
+2018,11385448,3550308,interpolacao_intercensitaria,12176866.0,São Paulo
+2019,11402049,3550308,interpolacao_intercensitaria,12252023.0,São Paulo
+2020,11418675,3550308,interpolacao_intercensitaria,12325232.0,São Paulo
+2021,11435325,3550308,interpolacao_intercensitaria,12396372.0,São Paulo
+2022,11451999,3550308,censo,,São Paulo
+2023,11461032,3550308,censo2022_x_taxa_estimativas,,São Paulo
+2024,11470072,3550308,censo2022_x_taxa_estimativas,11895578.0,São Paulo
+2025,11479120,3550308,censo2022_x_taxa_estimativas,11904961.0,São Paulo
+2026,11485268,3550308,censo2022_x_taxa_estimativas,11911337.0,São Paulo
+2010,6320446,3304557,censo,,Rio de Janeiro
+2011,6311271,3304557,interpolacao_intercensitaria,6355949.0,Rio de Janeiro
+2012,6302110,3304557,interpolacao_intercensitaria,6390290.0,Rio de Janeiro
+2013,6292961,3304557,interpolacao_intercensitaria,6429923.0,Rio de Janeiro
+2014,6283827,3304557,interpolacao_intercensitaria,6453682.0,Rio de Janeiro
+2015,6274705,3304557,interpolacao_intercensitaria,6476631.0,Rio de Janeiro
+2016,6265597,3304557,interpolacao_intercensitaria,6498837.0,Rio de Janeiro
+2017,6256501,3304557,interpolacao_intercensitaria,6520266.0,Rio de Janeiro
+2018,6247419,3304557,interpolacao_intercensitaria,6688927.0,Rio de Janeiro
+2019,6238351,3304557,interpolacao_intercensitaria,6718903.0,Rio de Janeiro
+2020,6229295,3304557,interpolacao_intercensitaria,6747815.0,Rio de Janeiro
+2021,6220252,3304557,interpolacao_intercensitaria,6775561.0,Rio de Janeiro
+2022,6211223,3304557,censo,,Rio de Janeiro
+2023,6211994,3304557,censo2022_x_taxa_estimativas,,Rio de Janeiro
+2024,6212764,3304557,censo2022_x_taxa_estimativas,6729894.0,Rio de Janeiro
+2025,6213535,3304557,censo2022_x_taxa_estimativas,6730729.0,Rio de Janeiro
+2026,6213908,3304557,censo2022_x_taxa_estimativas,6731133.0,Rio de Janeiro
+2010,2572159,5300108,censo,,Brasília
+2011,2591752,5300108,interpolacao_intercensitaria,2609998.0,Brasília
+2012,2611494,5300108,interpolacao_intercensitaria,2648532.0,Brasília
+2013,2631387,5300108,interpolacao_intercensitaria,2789761.0,Brasília
+2014,2651431,5300108,interpolacao_intercensitaria,2852372.0,Brasília
+2015,2671628,5300108,interpolacao_intercensitaria,2914830.0,Brasília
+2016,2691979,5300108,interpolacao_intercensitaria,2977216.0,Brasília
+2017,2712485,5300108,interpolacao_intercensitaria,3039444.0,Brasília
+2018,2733147,5300108,interpolacao_intercensitaria,2974703.0,Brasília
+2019,2753966,5300108,interpolacao_intercensitaria,3015268.0,Brasília
+2020,2774944,5300108,interpolacao_intercensitaria,3055149.0,Brasília
+2021,2796082,5300108,interpolacao_intercensitaria,3094325.0,Brasília
+2022,2817381,5300108,censo,,Brasília
+2023,2830681,5300108,censo2022_x_taxa_estimativas,,Brasília
+2024,2844044,5300108,censo2022_x_taxa_estimativas,2982818.0,Brasília
+2025,2857470,5300108,censo2022_x_taxa_estimativas,2996899.0,Brasília
+2026,2869957,5300108,censo2022_x_taxa_estimativas,3009996.0,Brasília
+2010,2459712,2304400,censo,,Fortaleza
+2011,2457113,2304400,interpolacao_intercensitaria,2476589.0,Fortaleza
+2012,2454517,2304400,interpolacao_intercensitaria,2500194.0,Fortaleza
+2013,2451924,2304400,interpolacao_intercensitaria,2551806.0,Fortaleza
+2014,2449334,2304400,interpolacao_intercensitaria,2571896.0,Fortaleza
+2015,2446746,2304400,interpolacao_intercensitaria,2591188.0,Fortaleza
+2016,2444161,2304400,interpolacao_intercensitaria,2609716.0,Fortaleza
+2017,2441579,2304400,interpolacao_intercensitaria,2627482.0,Fortaleza
+2018,2438999,2304400,interpolacao_intercensitaria,2643247.0,Fortaleza
+2019,2436422,2304400,interpolacao_intercensitaria,2669342.0,Fortaleza
+2020,2433848,2304400,interpolacao_intercensitaria,2686612.0,Fortaleza
+2021,2431277,2304400,interpolacao_intercensitaria,2703391.0,Fortaleza
+2022,2428708,2304400,censo,,Fortaleza
+2023,2432549,2304400,censo2022_x_taxa_estimativas,,Fortaleza
+2024,2436395,2304400,censo2022_x_taxa_estimativas,2574412.0,Fortaleza
+2025,2440248,2304400,censo2022_x_taxa_estimativas,2578483.0,Fortaleza
+2026,2443917,2304400,censo2022_x_taxa_estimativas,2582360.0,Fortaleza
+2010,2375609,3106200,censo,,Belo Horizonte
+2011,2370546,3106200,interpolacao_intercensitaria,2385640.0,Belo Horizonte
+2012,2365494,3106200,interpolacao_intercensitaria,2395785.0,Belo Horizonte
+2013,2360452,3106200,interpolacao_intercensitaria,2479165.0,Belo Horizonte
+2014,2355422,3106200,interpolacao_intercensitaria,2491109.0,Belo Horizonte
+2015,2350402,3106200,interpolacao_intercensitaria,2502557.0,Belo Horizonte
+2016,2345392,3106200,interpolacao_intercensitaria,2513451.0,Belo Horizonte
+2017,2340394,3106200,interpolacao_intercensitaria,2523794.0,Belo Horizonte
+2018,2335406,3106200,interpolacao_intercensitaria,2501576.0,Belo Horizonte
+2019,2330428,3106200,interpolacao_intercensitaria,2512070.0,Belo Horizonte
+2020,2325462,3106200,interpolacao_intercensitaria,2521564.0,Belo Horizonte
+2021,2320506,3106200,interpolacao_intercensitaria,2530701.0,Belo Horizonte
+2022,2315560,3106200,censo,,Belo Horizonte
+2023,2315112,3106200,censo2022_x_taxa_estimativas,,Belo Horizonte
+2024,2314665,3106200,censo2022_x_taxa_estimativas,2416339.0,Belo Horizonte
+2025,2314218,3106200,censo2022_x_taxa_estimativas,2415872.0,Belo Horizonte
+2026,2313814,3106200,censo2022_x_taxa_estimativas,2415451.0,Belo Horizonte
+2010,1802014,1302603,censo,,Manaus
+2011,1822491,1302603,interpolacao_intercensitaria,1832424.0,Manaus
+2012,1843200,1302603,interpolacao_intercensitaria,1861838.0,Manaus
+2013,1864145,1302603,interpolacao_intercensitaria,1982177.0,Manaus
+2014,1885328,1302603,interpolacao_intercensitaria,2020301.0,Manaus
+2015,1906751,1302603,interpolacao_intercensitaria,2057711.0,Manaus
+2016,1928418,1302603,interpolacao_intercensitaria,2094391.0,Manaus
+2017,1950331,1302603,interpolacao_intercensitaria,2130264.0,Manaus
+2018,1972493,1302603,interpolacao_intercensitaria,2145444.0,Manaus
+2019,1994907,1302603,interpolacao_intercensitaria,2182763.0,Manaus
+2020,2017576,1302603,interpolacao_intercensitaria,2219580.0,Manaus
+2021,2040502,1302603,interpolacao_intercensitaria,2255903.0,Manaus
+2022,2063689,1302603,censo,,Manaus
+2023,2085457,1302603,censo2022_x_taxa_estimativas,,Manaus
+2024,2107454,1302603,censo2022_x_taxa_estimativas,2279686.0,Manaus
+2025,2129683,1302603,censo2022_x_taxa_estimativas,2303732.0,Manaus
+2026,2151287,1302603,censo2022_x_taxa_estimativas,2327101.0,Manaus
+2010,1751907,4106902,censo,,Curitiba
+2011,1753714,4106902,interpolacao_intercensitaria,1764541.0,Curitiba
+2012,1755523,4106902,interpolacao_intercensitaria,1776761.0,Curitiba
+2013,1757334,4106902,interpolacao_intercensitaria,1848946.0,Curitiba
+2014,1759147,4106902,interpolacao_intercensitaria,1864416.0,Curitiba
+2015,1760962,4106902,interpolacao_intercensitaria,1879355.0,Curitiba
+2016,1762779,4106902,interpolacao_intercensitaria,1893997.0,Curitiba
+2017,1764597,4106902,interpolacao_intercensitaria,1908359.0,Curitiba
+2018,1766418,4106902,interpolacao_intercensitaria,1917185.0,Curitiba
+2019,1768240,4106902,interpolacao_intercensitaria,1933105.0,Curitiba
+2020,1770064,4106902,interpolacao_intercensitaria,1948626.0,Curitiba
+2021,1771890,4106902,interpolacao_intercensitaria,1963726.0,Curitiba
+2022,1773718,4106902,censo,,Curitiba
+2023,1775240,4106902,censo2022_x_taxa_estimativas,,Curitiba
+2024,1776764,4106902,censo2022_x_taxa_estimativas,1829225.0,Curitiba
+2025,1778289,4106902,censo2022_x_taxa_estimativas,1830795.0,Curitiba
+2026,1779637,4106902,censo2022_x_taxa_estimativas,1832183.0,Curitiba
+2010,1537704,2611606,censo,,Recife
+2011,1533578,2611606,interpolacao_intercensitaria,1546516.0,Recife
+2012,1529464,2611606,interpolacao_intercensitaria,1555039.0,Recife
+2013,1525360,2611606,interpolacao_intercensitaria,1599513.0,Recife
+2014,1521268,2611606,interpolacao_intercensitaria,1608488.0,Recife
+2015,1517186,2611606,interpolacao_intercensitaria,1617183.0,Recife
+2016,1513115,2611606,interpolacao_intercensitaria,1625583.0,Recife
+2017,1509056,2611606,interpolacao_intercensitaria,1633697.0,Recife
+2018,1505007,2611606,interpolacao_intercensitaria,1637834.0,Recife
+2019,1500969,2611606,interpolacao_intercensitaria,1645727.0,Recife
+2020,1496942,2611606,interpolacao_intercensitaria,1653461.0,Recife
+2021,1492926,2611606,interpolacao_intercensitaria,1661017.0,Recife
+2022,1488920,2611606,censo,,Recife
+2023,1489547,2611606,censo2022_x_taxa_estimativas,,Recife
+2024,1490175,2611606,censo2022_x_taxa_estimativas,1587707.0,Recife
+2025,1490803,2611606,censo2022_x_taxa_estimativas,1588376.0,Recife
+2026,1491373,2611606,censo2022_x_taxa_estimativas,1588983.0,Recife
+2010,1301912,5208707,censo,,Goiânia
+2011,1312695,5208707,interpolacao_intercensitaria,1318149.0,Goiânia
+2012,1323567,5208707,interpolacao_intercensitaria,1333767.0,Goiânia
+2013,1334529,5208707,interpolacao_intercensitaria,1393575.0,Goiânia
+2014,1345582,5208707,interpolacao_intercensitaria,1412364.0,Goiânia
+2015,1356727,5208707,interpolacao_intercensitaria,1430697.0,Goiânia
+2016,1367963,5208707,interpolacao_intercensitaria,1448639.0,Goiânia
+2017,1379293,5208707,interpolacao_intercensitaria,1466105.0,Goiânia
+2018,1390717,5208707,interpolacao_intercensitaria,1495705.0,Goiânia
+2019,1402235,5208707,interpolacao_intercensitaria,1516113.0,Goiânia
+2020,1413849,5208707,interpolacao_intercensitaria,1536097.0,Goiânia
+2021,1425559,5208707,interpolacao_intercensitaria,1555626.0,Goiânia
+2022,1437366,5208707,censo,,Goiânia
+2023,1445691,5208707,censo2022_x_taxa_estimativas,,Goiânia
+2024,1454065,5208707,censo2022_x_taxa_estimativas,1494599.0,Goiânia
+2025,1462487,5208707,censo2022_x_taxa_estimativas,1503256.0,Goiânia
+2026,1470711,5208707,censo2022_x_taxa_estimativas,1511709.0,Goiânia
+2010,1393399,1501402,censo,,Belém
+2011,1385668,1501402,interpolacao_intercensitaria,1402056.0,Belém
+2012,1377979,1501402,interpolacao_intercensitaria,1410430.0,Belém
+2013,1370334,1501402,interpolacao_intercensitaria,1425922.0,Belém
+2014,1362730,1501402,interpolacao_intercensitaria,1432844.0,Belém
+2015,1355169,1501402,interpolacao_intercensitaria,1439561.0,Belém
+2016,1347650,1501402,interpolacao_intercensitaria,1446042.0,Belém
+2017,1340173,1501402,interpolacao_intercensitaria,1452275.0,Belém
+2018,1332737,1501402,interpolacao_intercensitaria,1485732.0,Belém
+2019,1325342,1501402,interpolacao_intercensitaria,1492745.0,Belém
+2020,1317988,1501402,interpolacao_intercensitaria,1499641.0,Belém
+2021,1310675,1501402,interpolacao_intercensitaria,1506420.0,Belém
+2022,1303403,1501402,censo,,Belém
+2023,1302270,1501402,censo2022_x_taxa_estimativas,,Belém
+2024,1301137,1501402,censo2022_x_taxa_estimativas,1398531.0,Belém
+2025,1300006,1501402,censo2022_x_taxa_estimativas,1397315.0,Belém
+2026,1298929,1501402,censo2022_x_taxa_estimativas,1396157.0,Belém
+2010,1409351,4314902,censo,,Porto Alegre
+2011,1402811,4314902,interpolacao_intercensitaria,1413094.0,Porto Alegre
+2012,1396302,4314902,interpolacao_intercensitaria,1416714.0,Porto Alegre
+2013,1389822,4314902,interpolacao_intercensitaria,1467816.0,Porto Alegre
+2014,1383373,4314902,interpolacao_intercensitaria,1472482.0,Porto Alegre
+2015,1376954,4314902,interpolacao_intercensitaria,1476867.0,Porto Alegre
+2016,1370564,4314902,interpolacao_intercensitaria,1481019.0,Porto Alegre
+2017,1364204,4314902,interpolacao_intercensitaria,1484941.0,Porto Alegre
+2018,1357874,4314902,interpolacao_intercensitaria,1479101.0,Porto Alegre
+2019,1351573,4314902,interpolacao_intercensitaria,1483771.0,Porto Alegre
+2020,1345301,4314902,interpolacao_intercensitaria,1488252.0,Porto Alegre
+2021,1339059,4314902,interpolacao_intercensitaria,1492530.0,Porto Alegre
+2022,1332845,4314902,censo,,Porto Alegre
+2023,1332338,4314902,censo2022_x_taxa_estimativas,,Porto Alegre
+2024,1331832,4314902,censo2022_x_taxa_estimativas,1389322.0,Porto Alegre
+2025,1331326,4314902,censo2022_x_taxa_estimativas,1388794.0,Porto Alegre
+2026,1331323,4314902,censo2022_x_taxa_estimativas,1388791.0,Porto Alegre
+2010,1015329,2111300,censo,,São Luís
+2011,1017181,2111300,interpolacao_intercensitaria,1027430.0,São Luís
+2012,1019036,2111300,interpolacao_intercensitaria,1039610.0,São Luís
+2013,1020895,2111300,interpolacao_intercensitaria,1053922.0,São Luís
+2014,1022757,2111300,interpolacao_intercensitaria,1064197.0,São Luís
+2015,1024622,2111300,interpolacao_intercensitaria,1073893.0,São Luís
+2016,1026491,2111300,interpolacao_intercensitaria,1082935.0,São Luís
+2017,1028363,2111300,interpolacao_intercensitaria,1091868.0,São Luís
+2018,1030238,2111300,interpolacao_intercensitaria,1094667.0,São Luís
+2019,1032117,2111300,interpolacao_intercensitaria,1101884.0,São Luís
+2020,1034000,2111300,interpolacao_intercensitaria,1108975.0,São Luís
+2021,1035886,2111300,interpolacao_intercensitaria,1115932.0,São Luís
+2022,1037775,2111300,censo,,São Luís
+2023,1038879,2111300,censo2022_x_taxa_estimativas,,São Luís
+2024,1039985,2111300,censo2022_x_taxa_estimativas,1088057.0,São Luís
+2025,1041092,2111300,censo2022_x_taxa_estimativas,1089215.0,São Luís
+2026,1042061,2111300,censo2022_x_taxa_estimativas,1090229.0,São Luís

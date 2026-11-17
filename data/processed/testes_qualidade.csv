@@ -1,0 +1,12 @@
+teste,resultado
+pelo menos 3 fontes oficiais distintas,OK
+base anual de Salvador com >= 6 colunas,OK
+painel sem duplicidade capital-ano,OK
+13 capitais x 12 anos no painel,OK
+frota: soma dos municípios = total nacional (todos os anos),OK
+SHA-256 dos arquivos baixados pelo navegador confere,OK
+população de Salvador no Censo 2022 = 2.417.678,OK
+"metrô mensal 2024 difere < 0,1% do total oficial",OK
+IMEC: 36 meses lidos,OK
+percentuais modais somam no máximo 100% (coletivo + individual + ativo),OK
+sem valores negativos nas contagens,OK

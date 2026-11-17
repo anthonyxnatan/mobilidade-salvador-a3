@@ -1,0 +1,177 @@
+{
+  "pop_2010": 2675656,
+  "pop_2022": 2417678,
+  "pop_2025": 2404365,
+  "var_pop_2010_2022_pct": -9.64167292058471,
+  "var_autos_2014_2025_pct": 25.345929314639704,
+  "var_motos_2014_2025_pct": 92.39195879047364,
+  "var_pop_2014_2025_pct": -7.050415948098404,
+  "motorizacao_2014": 299.6577546805034,
+  "motorizacao_2025": 437.44564573182527,
+  "tarifa_real_2014": 5.2437156497850665,
+  "tarifa_real_2025": 5.67524763694209,
+  "tarifa_nominal_2025": 5.6,
+  "stco_pass_dia_2019": 1500000.0,
+  "stco_pass_dia_2024": 1250000.0,
+  "pass_equiv_2022": 179883898.0,
+  "pass_equiv_2025": 162863721.0,
+  "vel_2022": 21.5,
+  "vel_2025": 16.5,
+  "km_2022": 115000000.0,
+  "km_2025": 105616731.0,
+  "frota_op_2022": 1789.0,
+  "frota_op_2025": 1840.0,
+  "onibus_100mil_2022": 73.99661989727333,
+  "onibus_100mil_2025": 76.5274823082186,
+  "nao_completadas_2022": 5.0,
+  "nao_completadas_2025": 16.2,
+  "var_pass_dia_2019_2024_pct": -16.666666666666664,
+  "var_vel_pct": -23.25581395348837,
+  "motorizacao_slope": 12.230555869723016,
+  "motorizacao_r2": 0.9979134483427473,
+  "corr_mensal_onibus_metro": 0.49844175302310895,
+  "p_mensal_onibus_metro": 0.013173499955977712,
+  "pct_onibus_ssa": 44.67051584459995,
+  "pct_coletivo_ssa": 48.43763556668174,
+  "pct_auto_ssa": 25.962400526591605,
+  "pct_ativo_ssa": 16.37072881804941,
+  "tempo_medio_ssa": 43.794820392216366,
+  "rank_onibus_ssa": 1,
+  "tempo_onibus_min": 59.16059557642407,
+  "tempo_auto_min": 32.46904286481242,
+  "mais1h_2010": 22.02376019245071,
+  "mais1h_2022": 21.69117190121677,
+  "grupo_ssa": "A: coletivo forte e viagens longas",
+  "rho_coletivo_tempo": 0.8736263736263737,
+  "p_coletivo_tempo": 9.528897290370499e-05,
+  "rho_coletivo_motoriz": -0.24725274725274726,
+  "p_coletivo_motoriz": 0.415405119725538,
+  "r_pop_motoriz_nivel": -0.9771869619826425,
+  "r_pop_motoriz_dif": 0.5607219954474855,
+  "p_pop_motoriz_dif": 0.07274714564590057,
+  "ols_beta_coletivo": 0.5752492361154565,
+  "ols_p_coletivo": 4.336149325873176e-05,
+  "ols_r2": 0.8450993922210905,
+  "ols_r2_aj": 0.8141192706653086,
+  "queda_total_dia": 250000.0,
+  "ef_pop": 42916.56148099271,
+  "ef_metro": 27676.846575342464,
+  "residual": 179406.59194366483,
+  "ef_pop_pct": 17.166624592397085,
+  "ef_metro_pct": 11.070738630136985,
+  "residual_pct": 71.76263677746593,
+  "var_motoriz_2019_2024_pct": 16.244192849712057,
+  "hipoteses": [
+    {
+      "id": "H1",
+      "hipótese": "O metrô absorveu passageiros do ônibus",
+      "resultado": "Parcialmente confirmada",
+      "evidência": "Ganho do metrô explica no máximo 11% da perda do ônibus; parte das viagens de metrô é integrada com ônibus"
+    },
+    {
+      "id": "H2",
+      "hipótese": "Carros e motos cresceram e tiraram usuários do coletivo",
+      "resultado": "Confirmada (associação)",
+      "evidência": "Motorização +16% (2019–2024) e +46% desde 2014, com população em queda; motos quase dobraram"
+    },
+    {
+      "id": "H3",
+      "hipótese": "A tarifa ficou mais cara acima da inflação",
+      "resultado": "Fraca / parcialmente",
+      "evidência": "Tarifa real de R$ 5,24 (2014) para R$ 5,68 (2025): +8% em 11 anos"
+    },
+    {
+      "id": "H4",
+      "hipótese": "A pandemia provocou uma quebra estrutural",
+      "resultado": "Confirmada",
+      "evidência": "Metrô recuperou e bateu recorde em 2024; ônibus seguia cerca de 17% abaixo de 2019 em 2024"
+    },
+    {
+      "id": "H5",
+      "hipótese": "A queda da população explica a queda da demanda",
+      "resultado": "Rejeitada como causa principal",
+      "evidência": "População caiu cerca de 2,9% (2019–2024), explica só 17% da perda de passageiros"
+    },
+    {
+      "id": "H6",
+      "hipótese": "O ônibus ficou mais lento (congestionamento)",
+      "resultado": "Confirmada (2022→2025)",
+      "evidência": "Velocidade no pico em tráfego misto: 21,5 → 16,5 km/h (-23%); BRT a 22,2 km/h"
+    }
+  ],
+  "km_por_hab_2022": 47.566301219599964,
+  "km_por_hab_2025": 43.92707887529556,
+  "km_onibus_dia_2022": 176.11430584163494,
+  "km_onibus_dia_2025": 157.26136241810602,
+  "hab_por_linha_2017": 4758.490566037736,
+  "hab_por_linha_atual": 4668.669902912621,
+  "autos_add_2014_2025": 166156,
+  "motos_add_2014_2025": 110486,
+  "pass_por_onibus_dia_2025": 242.50107355568792,
+  "motoriz_2030_linear": 494.259956984109,
+  "motoriz_2030_holt": 521.0983919429248,
+  "motoriz_2030_inf": 487.8431933092962,
+  "motoriz_2030_sup": 500.6767206589218,
+  "mape_motoriz": 0.5549739553695476,
+  "mape_metro_hw": 1.6597844276910616,
+  "metro_prev_2027": 117445637.9392025,
+  "pop_2030": 2384463.6383766662,
+  "cenarios_2030": {
+    "Pessimista": {
+      "onibus_dia": 918864.8632812498,
+      "metro_ano": 117500000.0
+    },
+    "Tendencial": {
+      "onibus_dia": 1041215.0061612497,
+      "metro_ano": 123493680.88675001
+    },
+    "Otimista": {
+      "onibus_dia": 1250000.0,
+      "metro_ano": 136214703.73025
+    }
+  },
+  "recomendacoes": [
+    {
+      "recomendação": "1. Dar prioridade ao ônibus no trânsito",
+      "evidência": "Velocidade em tráfego misto caiu de 21,5 para 16,5 km/h (2022–2025); BRT roda a 22,2 km/h; quem vai de ônibus leva 59 min contra 32,5 min de carro (Censo 2022)",
+      "ação": "Ampliar faixas exclusivas/BRS nos corredores mais carregados, com fiscalização eletrônica e semáforos com prioridade",
+      "indicador (KPI)": "Velocidade média no pico ≥ 20 km/h até 2028; tempo médio de viagem de ônibus"
+    },
+    {
+      "recomendação": "2. Reorganizar a rede em torno do metrô",
+      "evidência": "Metrô bateu recorde (117,5 mi/ano) e tem demanda estável; ônibus e metrô têm a mesma sazonalidade",
+      "ação": "Linhas alimentadoras curtas e frequentes até as estações, com integração tarifária e horários coordenados",
+      "indicador (KPI)": "% de viagens integradas ônibus–metrô; passageiros/dia nas estações"
+    },
+    {
+      "recomendação": "3. Recuperar confiabilidade",
+      "evidência": "Viagens não completadas subiram de 5% para 16,2% (PEMOB 2022→2025); idade média da frota subiu para 8,4 anos",
+      "ação": "Contratos com metas de desempenho (cumprimento de viagens, pontualidade) ligadas ao subsídio; renovação de frota já anunciada",
+      "indicador (KPI)": "Viagens não completadas < 5%; idade média < 7 anos"
+    },
+    {
+      "recomendação": "4. Gerir o crescimento de carros e motos",
+      "evidência": "Motorização +46% desde 2014 (motos +92%), com população em queda; projeção de 494–521 veículos/mil hab. em 2030",
+      "ação": "Política de estacionamento (rotativo, menos vagas em corredores), segurança viária para motociclistas e campanhas de migração modal",
+      "indicador (KPI)": "Motorização por mil hab.; sinistros com motos"
+    },
+    {
+      "recomendação": "5. Tarifa e subsídio com foco no usuário",
+      "evidência": "Tarifa real subiu 8% desde 2014 (R$ 5,68 em 2025, a preços de dez/2025); em 2026 a passagem foi para R$ 5,90",
+      "ação": "Manter subsídio vinculado a desempenho; estudar tarifa temporal e integração ampliada (ônibus–metrô–ônibus) para baixa renda",
+      "indicador (KPI)": "Tarifa real; passageiros equivalentes/ano"
+    },
+    {
+      "recomendação": "6. Abrir os dados do transporte",
+      "evidência": "Não existe série pública do STCO; PEMOB tem lacunas e erros; dados vieram de PDFs e relatórios esparsos",
+      "ação": "Publicar mensalmente passageiros, frota, km e viagens por linha (dados abertos + GTFS), como faz Belo Horizonte",
+      "indicador (KPI)": "Portal de dados abertos ativo; atualização mensal"
+    },
+    {
+      "recomendação": "7. Planejar em escala metropolitana",
+      "evidência": "Salvador perdeu 9,6% da população entre os Censos (2010–2022); quem mora na região metropolitana e trabalha na capital não aparece nos dados municipais",
+      "ação": "Planejamento conjunto Prefeitura–Estado da rede metropolitana, integrando ônibus metropolitanos, metrô e STCO",
+      "indicador (KPI)": "Viagens intermunicipais integradas; tempo de deslocamento > 1h"
+    }
+  ]
+}
