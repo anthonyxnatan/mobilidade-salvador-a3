@@ -243,6 +243,76 @@ CSS = """
 .js-plotly-plot .scatterlayer .js-fill { animation: aparece 1.2s ease .5s both; }
 .js-plotly-plot .barlayer, .js-plotly-plot .waterfalllayer { animation: revela 1.3s var(--curva) .15s both; }
 
+
+/* ---------- v3: sem barra lateral ---------- */
+[data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"], [data-testid="stExpandSidebarButton"], [data-testid="collapsedControl"] { display: none !important; }
+[data-testid="stMainBlockContainer"], .block-container { max-width: 1280px; padding-left: 2.2rem; padding-right: 2.2rem; }
+
+/* ---------- barra superior ---------- */
+.topo { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 16px; animation: entra .6s var(--curva) both; }
+.topo .marca { display: flex; align-items: center; gap: 12px; }
+.topo .marca img { width: 44px; height: 44px; object-fit: contain; border-radius: 11px; background: #fff; border: 1px solid var(--linha); padding: 3px; }
+.topo .marca b { display: block; font-size: 17px; color: var(--marinho); letter-spacing: -.01em; }
+.topo .marca span { font-size: 12.5px; color: var(--cinza); }
+.topo .links { display: flex; gap: 8px; flex-wrap: wrap; }
+.topo .links a { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: var(--marinho) !important; text-decoration: none;
+  padding: 8px 14px; border-radius: 999px; border: 1px solid var(--linha); background: #fff; transition: all .25s var(--curva); }
+.topo .links a:hover { background: var(--marinho); color: #fff !important; border-color: var(--marinho); transform: translateY(-1px); }
+.topo .links svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.9; }
+
+/* ---------- faixa principal compacta ---------- */
+.hero { padding: 36px 44px 150px !important; }
+.hero .cidade { position: absolute; left: 0; right: 0; bottom: 52px; height: 96px; margin: 0; }
+.hero-lado { flex: none; text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.selo { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: #dce7f7; padding: 7px 13px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.07); }
+.selo i { width: 7px; height: 7px; border-radius: 50%; background: #45d39b; animation: pulsa 2.2s infinite; }
+.kpis.sobre { position: relative; z-index: 3; margin: -64px 22px 22px; grid-template-columns: repeat(5, 1fr); }
+.kpis.sobre .kpi { box-shadow: 0 10px 30px rgba(14,26,51,.12); }
+.spark { margin-top: 10px; height: 40px; }
+.spark svg { width: 100%; height: 40px; overflow: visible; }
+.spark .ln { fill: none; stroke: var(--cor); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 400; stroke-dashoffset: 400; animation: desenha 1.8s var(--curva) .4s forwards; }
+.spark .ar { opacity: 0; animation: aparece 1s ease 1.2s forwards; }
+.spark .pt { fill: var(--cor); stroke: #fff; stroke-width: 2; opacity: 0; animation: aparece .4s ease 2s forwards; }
+.mini { display: flex; align-items: flex-end; gap: 10px; height: 40px; margin-top: 10px; }
+.mini .b { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+.mini .b i { display: block; border-radius: 5px 5px 2px 2px; background: #d9dee6; height: var(--h); transform-origin: bottom; animation: cresce 1.1s var(--curva) .4s both; }
+.mini .b.agora i { background: var(--cor); animation-delay: .6s; }
+.mini .b span { font-size: 10.5px; color: var(--cinza); text-align: center; margin-top: 3px; }
+@keyframes cresce { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* ---------- linha do tempo ---------- */
+.tempo { position: relative; background: var(--cartao); border: 1px solid var(--linha); border-radius: 18px; padding: 22px 26px 20px; box-shadow: var(--sombra); margin: 4px 0 18px; }
+.tempo h4 { margin: 0 0 14px !important; padding: 0 !important; font-size: 16px !important; color: var(--marinho) !important; font-weight: 700 !important; }
+.tempo .trilha { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.tempo .trilha::before { content: ""; position: absolute; left: 0; right: 0; top: 37px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--azul), var(--laranja));
+  transform-origin: left; animation: barra 1.6s var(--curva) .2s both; }
+.tempo .marco { position: relative; animation: entra .7s var(--curva) both; }
+.tempo .marco:nth-child(2) { animation-delay: .25s } .tempo .marco:nth-child(3) { animation-delay: .5s } .tempo .marco:nth-child(4) { animation-delay: .75s } .tempo .marco:nth-child(5) { animation-delay: 1s }
+.tempo .ano { font-size: 20px; font-weight: 800; color: var(--marinho); letter-spacing: -.02em; height: 26px; }
+.tempo .pt { width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 4px solid var(--cor, var(--azul)); margin: 4px 0 12px; position: relative; z-index: 1; }
+.tempo .marco b.t { display: block; font-size: 14px; color: var(--marinho); margin-bottom: 3px; }
+.tempo .marco span b { color: var(--marinho); font-weight: 700; }
+.tempo .marco span { font-size: 12.8px; color: var(--tinta-2); line-height: 1.45; }
+
+/* ---------- filtros dentro dos blocos ---------- */
+[data-testid="stPopover"] button { border-radius: 999px !important; font-weight: 600 !important; }
+[data-testid="stSegmentedControl"] button { border-radius: 10px !important; }
+
+@media (max-width: 900px) {
+  .kpis.sobre { grid-template-columns: repeat(2, 1fr); margin: -70px 10px 18px; }
+  .tempo .trilha { grid-template-columns: 1fr; } .tempo .trilha::before { display: none; }
+  .topo { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 760px) {
+  .hero { padding: 26px 22px 140px !important; } .hero-topo { flex-direction: column; gap: 12px; } .hero-lado { align-items: flex-start; order: -1; }
+  .hero h1 { font-size: 28px !important; } .hero p { font-size: 14.5px; }
+  .kpis.sobre { grid-template-columns: repeat(2, 1fr); gap: 10px; margin: -56px 6px 18px; }
+  .kpis.sobre .kpi { padding: 14px 12px 12px; } .kpis.sobre .kpi-val { font-size: 25px; } .kpis.sobre .kpi-rot { font-size: 12px; }
+  .kpis.sobre .kpi-nota { display: none; }
+  [data-testid="stMainBlockContainer"], .block-container { padding-left: 1rem; padding-right: 1rem; }
+}
+
 @keyframes entra { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes sobe { from { opacity: 0; transform: translateY(22px) scale(.98); } to { opacity: 1; transform: none; } }
 @keyframes lado { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: none; } }
@@ -486,6 +556,83 @@ def hipoteses(df):
 def fontes_oficiais(itens):
     bloco('<div class="fontes">' + "".join(f'<div class="fnt"><b>{esc(t)}</b><span>{esc(x)}</span></div>' for t, x in itens) + "</div>")
 
+
+
+def topo(links):
+    lk = "".join(f'<a href="{esc(u)}" target="_blank" rel="noopener">{ic(i)}{esc(t)}</a>' for t, u, i in links)
+    bloco(f"""<div class="topo"><div class="marca"><img src="data:image/png;base64,{logo_b64()}" alt="UNIFACS">
+<div><b>Mobilidade em Salvador</b><span>Projeto A3 · Análise de Dados e Big Data · UNIFACS</span></div></div>
+<div class="links">{lk}</div></div>""")
+
+
+def spark(valores, cor_id):
+    """Minigráfico de linha em SVG (viewBox 200 x 40), com área preenchida e ponto final."""
+    v = [float(x) for x in valores]
+    lo, hi = min(v), max(v)
+    amp = (hi - lo) or 1
+    pts = [(i * 200 / (len(v) - 1), 36 - (x - lo) / amp * 32) for i, x in enumerate(v)]
+    d = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in pts)
+    area = d + f" L200 40 L0 40 Z"
+    gid = f"g{cor_id}"
+    return (f'<div class="spark"><svg viewBox="0 0 200 40" preserveAspectRatio="none"><defs><linearGradient id="{gid}" x1="0" y1="0" x2="0" y2="1">'
+            f'<stop offset="0" stop-color="currentColor" stop-opacity=".22"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>'
+            f'<path class="ar" d="{area}" fill="url(#{gid})"/><path class="ln" d="{d}" vector-effect="non-scaling-stroke"/>'
+            f'<circle class="pt" cx="{pts[-1][0]:.1f}" cy="{pts[-1][1]:.1f}" r="3.5"/></svg></div>')
+
+
+def mini(pares):
+    """Duas barras comparando dois anos: [(rótulo, valor), (rótulo, valor)]."""
+    mx = max(v for _, v in pares) or 1
+    barras = "".join(f'<div class="b{" agora" if k == len(pares) - 1 else ""}"><i style="--h:{max(8, v / mx * 100):.0f}%"></i><span>{esc(r)}</span></div>'
+                     for k, (r, v) in enumerate(pares))
+    return f'<div class="mini">{barras}</div>'
+
+
+def hero(rotulo, titulo_html, texto, selo, indicadores):
+    """Faixa principal compacta, com a cidade ao fundo e os indicadores sobrepostos."""
+    predios = ("M0 112 V70 h40 V48 h34 V70 h22 V30 h46 V70 h30 V56 h28 V70 h36 V40 h30 V20 h24 V40 h20 V70 h40 V52 h34 V70 h26 V36 h44 V70 "
+               "h30 V58 h40 V70 h22 V26 h36 V70 h34 V46 h30 V70 h40 V60 h26 V70 h30 V34 h42 V70 h28 V50 h36 V70 h40 V42 h30 V70 h24 V30 h34 V70 "
+               "h40 V54 h32 V70 h24 V40 h40 V70 h34 V112")
+    janelas = "".join(f'<rect x="{x}" y="{y}" width="5" height="7" rx="1" fill="rgba(255,214,120,{a})"/>'
+                      for x, y, a in [(108, 40, .55), (122, 52, .35), (300, 32, .45), (316, 46, .3), (488, 44, .5), (668, 36, .4),
+                                      (684, 50, .25), (858, 44, .45), (1010, 40, .5), (1026, 54, .3), (1140, 50, .4)])
+    onibus = ('<g class="bus-anda"><g transform="translate(0,72)">'
+              '<rect x="0" y="0" width="92" height="28" rx="6" fill="#2a78d6"/>'
+              + "".join(f'<rect x="{6 + 13 * k}" y="5" width="10" height="9" rx="2" fill="#dbe9fb"/>' for k in range(6))
+              + '<rect x="84" y="5" width="6" height="14" rx="2" fill="#dbe9fb"/><rect x="0" y="19" width="92" height="3" fill="#1c5fb0"/>'
+              '<g class="roda"><circle cx="20" cy="29" r="5.5" fill="#0b1325"/><circle cx="20" cy="29" r="2" fill="#8a9bb8"/><path d="M20 24.5v9" stroke="#8a9bb8" stroke-width="1"/></g>'
+              '<g class="roda"><circle cx="72" cy="29" r="5.5" fill="#0b1325"/><circle cx="72" cy="29" r="2" fill="#8a9bb8"/><path d="M72 24.5v9" stroke="#8a9bb8" stroke-width="1"/></g>'
+              '<rect x="89" y="22" width="3" height="3" rx="1" fill="#ffd36e"/></g></g>')
+    svg = (f'<svg viewBox="0 0 1200 112" preserveAspectRatio="xMidYMax slice" aria-hidden="true">'
+           f'<g class="predios"><path d="{predios}"/></g>{janelas}<line class="rua" x1="0" y1="108" x2="1200" y2="108"/>{onibus}</svg>')
+    cartoes = []
+    for k, it in enumerate(indicadores):
+        cor, fundo = CORES[it.get("cor", "azul")]
+        tom = it.get("tom", "neutro"); d = it.get("delta", "")
+        seta = "seta_cima" if d.startswith("+") else "seta_baixo" if d.startswith(("-", "−")) else "igual"
+        delta = f'<span class="delta {tom}">{ic(seta)}{esc(d)}</span>' if d else ""
+        nota_ = f'<span class="kpi-nota">{esc(it["nota"])}</span>' if it.get("nota") else ""
+        un = f'<small>{esc(it["unidade"])}</small>' if it.get("unidade") else ""
+        graf = spark(it["serie"], k) if it.get("serie") else (mini(it["pares"]) if it.get("pares") else "")
+        cartoes.append(f"""<div class="kpi" style="--cor:{cor};--fundo-ic:{fundo};color:{cor}">
+<div class="kpi-topo"><div class="kpi-ic">{ic(it.get("icone", "grafico"))}</div><div class="kpi-rot">{esc(it["rotulo"])}</div></div>
+<div class="kpi-val">{numero(it["valor"])}{un}</div><div class="kpi-rodape">{delta}{nota_}</div>{graf}</div>""")
+    bloco(f"""
+<div class="hero">
+  <div class="hero-topo">
+    <div><div class="hero-rotulo">{esc(rotulo)}</div><h1>{titulo_html}</h1><p>{esc(texto)}</p></div>
+    <div class="hero-lado"><span class="selo"><i></i>{esc(selo)}</span></div>
+  </div>
+  <div class="cidade">{svg}</div>
+</div>
+<div class="kpis sobre">{"".join(cartoes)}</div>""")
+
+
+def linha_tempo(titulo, marcos):
+    """marcos: (ano, título, texto, cor)."""
+    corpo = "".join(f'<div class="marco" style="--cor:{CORES[c][0]}"><div class="ano">{esc(a)}</div><div class="pt"></div><b class="t">{esc(t)}</b><span>{x}</span></div>'
+                    for a, t, x, c in marcos)
+    bloco(f'<div class="tempo"><h4>{esc(titulo)}</h4><div class="trilha">{corpo}</div></div>')
 
 def barra_lateral(equipe, prof, links):
     lk = "".join(f'<a href="{esc(u)}" target="_blank" rel="noopener">{ic(i)}{esc(t)}</a>' for t, u, i in links)

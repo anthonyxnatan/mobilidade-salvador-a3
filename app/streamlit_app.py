@@ -18,7 +18,7 @@ import ui
 # Configuração e dados
 # ----------------------------------------------------------------------------
 st.set_page_config(page_title="Mobilidade em Salvador · Projeto A3", layout="wide",
-                   page_icon=str(ui.ASSETS / "logo_unifacs.png"), initial_sidebar_state="auto")
+                   page_icon=str(ui.ASSETS / "logo_unifacs.png"), initial_sidebar_state="collapsed")
 ui.estilo()
 
 DADOS = Path(__file__).resolve().parent.parent / "data" / "processed"
@@ -27,13 +27,17 @@ CINZA, CINZA_CLARO, MARINHO = "#898781", "#c3c2b7", "#0e1a33"
 SSA = "Salvador"
 CFG = {"displayModeBar": False, "responsive": True}
 REPO = "https://github.com/anthonyxnatan/mobilidade-salvador-a3"
-LINKS = [("Vídeo de apresentação", "https://www.youtube.com/watch?v=KZsl3WzzS_g", "video"),
-         ("Relatório final (PDF)", f"{REPO}/blob/main/relatorios/Relatorio_Final_A3.pdf", "livro"),
-         ("Código no GitHub", REPO, "codigo")]
+LINKS = [("Relatório", f"{REPO}/blob/main/relatorios/Relatorio_Final_A3.pdf", "livro"),
+         ("Vídeo", "https://www.youtube.com/watch?v=KZsl3WzzS_g", "video"),
+         ("GitHub", REPO, "codigo")]
 EQUIPE = ["Anthony Natan Santos Pereira", "Caio Branco Marques", "Clara Gil Moreira de Alencar Santiago",
           "Fernanda Santos da Silva", "Lukas Carneiro Rocha"]
 PROF = "Prof. Eduardo Sidney da Silva Xavier"
 UC = "UC Análise de Dados e Big Data"
+COORD = {"Belém": (-48.49, -1.46), "Belo Horizonte": (-43.94, -19.92), "Brasília": (-47.88, -15.79), "Curitiba": (-49.27, -25.43),
+         "Fortaleza": (-38.52, -3.73), "Goiânia": (-49.25, -16.68), "Manaus": (-60.02, -3.12), "Porto Alegre": (-51.23, -30.03),
+         "Recife": (-34.88, -8.05), "Rio de Janeiro": (-43.17, -22.91), "Salvador": (-38.50, -12.97), "São Luís": (-44.30, -2.53),
+         "São Paulo": (-46.63, -23.55)}
 
 
 @st.cache_data
@@ -46,6 +50,7 @@ def carregar():
     d["base_salvador_mensal"]["data"] = pd.to_datetime(d["base_salvador_mensal"]["data"])
     d["previsao_metro_mensal"]["data"] = pd.to_datetime(d["previsao_metro_mensal"]["data"])
     d["R"] = json.load(open(DADOS / "resultados_chave.json", encoding="utf-8"))
+    d["mapa"] = json.load(open(ui.ASSETS / "america_do_sul.json", encoding="utf-8"))
     return d
 
 
@@ -78,8 +83,8 @@ def layout(fig, titulo, sub="", y="", altura=390):
     return fig
 
 
-def grafico(fig):
-    st.plotly_chart(fig, width="stretch", config=CFG, theme=None)
+def grafico(fig, key=None):
+    st.plotly_chart(fig, width="stretch", config=CFG, theme=None, key=key)
 
 
 MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
@@ -94,60 +99,69 @@ def eixo_mes_pt(fig, datas, passo=3):
     return fig
 
 
-# ----------------------------------------------------------------------------
-# Barra lateral
-# ----------------------------------------------------------------------------
-with st.sidebar:
-    rodape_lateral = ui.barra_lateral(EQUIPE, PROF, LINKS)
-    ui.bloco('<div class="lat-titulo">Filtros</div>')
-    capitais_todas = sorted(painel["municipio"].unique())
-    padrao = [SSA, "Recife", "Fortaleza", "Belo Horizonte", "Rio de Janeiro", "Curitiba"]
-    sel_cap = st.multiselect("Capitais para comparar", capitais_todas, default=padrao)
-    if SSA not in sel_cap:
-        sel_cap = [SSA] + sel_cap
-    anos = st.slider("Período das séries anuais", 2010, 2025, (2014, 2025))
-    ui.bloco(rodape_lateral)
+def botoes_animacao(fig, anos, prefixo):
+    """Botão de reproduzir e barra de anos para gráficos animados do Plotly."""
+    fig.update_layout(
+        updatemenus=[dict(type="buttons", direction="left", x=-0.02, y=-0.105, xanchor="right", yanchor="top", showactive=False, pad=dict(t=0, r=10),
+                          bgcolor="#0e1a33", bordercolor="#0e1a33", font=dict(color="white", size=12.5),
+                          buttons=[dict(label="  ▶  Reproduzir  ", method="animate",
+                                        args=[None, dict(frame=dict(duration=650, redraw=False), transition=dict(duration=550, easing="cubic-in-out"),
+                                                         fromcurrent=True, mode="immediate")]),
+                                   dict(label="  ❚❚  ", method="animate", args=[[None], dict(frame=dict(duration=0, redraw=False), mode="immediate")])])],
+        sliders=[dict(active=len(anos) - 1, x=0, y=-0.085, len=1, xanchor="left", yanchor="top", pad=dict(t=0), currentvalue=dict(visible=True, prefix="Ano: ", xanchor="right", offset=8, font=dict(size=15, color="#0e1a33")),
+                      bgcolor="#e6e4dd", activebgcolor=AZUL, bordercolor="#e6e4dd", tickcolor="#c3c2b7", font=dict(size=11, color=CINZA),
+                      steps=[dict(label=str(a), method="animate", args=[[f"{prefixo}{a}"], dict(mode="immediate", frame=dict(duration=0, redraw=False),
+                                                                                                    transition=dict(duration=400))]) for a in anos])])
+    return fig
+
 
 # ----------------------------------------------------------------------------
-# Cabeçalho
+# Barra superior e faixa principal
 # ----------------------------------------------------------------------------
-ui.cabecalho(
-    "Projeto A3 · Análise de Dados e Big Data · UNIFACS",
+ui.topo(LINKS)
+met_serie = base.dropna(subset=["metro_passageiros_ano"])["metro_passageiros_ano"].tolist()
+ui.hero(
+    "Transporte público e população · 2010 a 2025",
     "Salvador encolheu, o carro cresceu e <em>o ônibus ficou mais lento</em>",
-    "Painel interativo sobre transporte público e população em Salvador entre 2010 e 2025, "
-    "construído apenas com dados de fontes oficiais.",
-    ["Dados oficiais", "IBGE", "SENATRAN", "Ministério das Cidades", "SEI-BA", "CTB", "Prefeitura de Salvador"])
+    "Painel interativo do projeto A3, construído apenas com dados oficiais do IBGE, SENATRAN, Ministério das Cidades, "
+    "SEI-BA, CTB e Prefeitura de Salvador.",
+    "7 instituições · 894 registros",
+    [
+        dict(rotulo="População, Censo 2022", valor=br(R["pop_2022"] / 1e6, 2), unidade="mi", icone="pessoas", cor="marinho",
+             delta=f"{br(R['var_pop_2010_2022_pct'], 1)}%", tom="neutro", nota="desde 2010", serie=base["populacao"].tolist()),
+        dict(rotulo="Autos e motos por mil hab.", valor=br(R["motorizacao_2025"]), icone="carro", cor="laranja",
+             delta=f"+{br((R['motorizacao_2025'] / R['motorizacao_2014'] - 1) * 100)}%", tom="ruim", nota="desde 2014",
+             serie=base["motorizacao_por_mil_hab"].dropna().tolist()),
+        dict(rotulo="Passageiros de ônibus por dia", valor=br(R["stco_pass_dia_2024"] / 1e6, 2), unidade="mi", icone="onibus", cor="azul",
+             delta=f"{br(R['var_pass_dia_2019_2024_pct'], 1)}%", tom="ruim", nota="2019 → 2024",
+             pares=[("2019", R["stco_pass_dia_2019"]), ("2024", R["stco_pass_dia_2024"])]),
+        dict(rotulo="Velocidade do ônibus no pico", valor=br(R["vel_2025"], 1), unidade="km/h", icone="velocidade", cor="vermelho",
+             delta=f"{br(R['var_vel_pct'], 0)}%", tom="ruim", nota="2022 → 2025", pares=[("2022", R["vel_2022"]), ("2025", R["vel_2025"])]),
+        dict(rotulo="Passageiros do metrô (2025)", valor="117,5", unidade="mi", icone="trem", cor="aqua",
+             delta="recorde", tom="bom", nota="igual a 2024", serie=met_serie),
+    ])
 
-abas = st.tabs(["Resumo", "População e oferta", "Ônibus e metrô", "Trânsito e motorização",
+abas = st.tabs(["Visão geral", "População e oferta", "Ônibus e metrô", "Trânsito e motorização",
                 "Salvador × capitais", "Projeções 2030", "Recomendações", "Dados e fontes"])
 
 # ----------------------------------------------------------------------------
-# 1. Resumo
+# 1. Visão geral
 # ----------------------------------------------------------------------------
 with abas[0]:
-    ui.kpis([
-        dict(rotulo="População, Censo 2022", valor=br(R["pop_2022"] / 1e6, 2), unidade="mi", icone="pessoas", cor="marinho",
-             delta=f"{br(R['var_pop_2010_2022_pct'], 1)}%", tom="neutro", nota="desde 2010"),
-        dict(rotulo="Autos e motos por mil hab.", valor=br(R["motorizacao_2025"]), icone="carro", cor="laranja",
-             delta=f"+{br((R['motorizacao_2025'] / R['motorizacao_2014'] - 1) * 100)}%", tom="ruim", nota="desde 2014"),
-        dict(rotulo="Passageiros de ônibus por dia", valor=br(R["stco_pass_dia_2024"] / 1e6, 2), unidade="mi", icone="onibus", cor="azul",
-             delta=f"{br(R['var_pass_dia_2019_2024_pct'], 1)}%", tom="ruim", nota="2019 → 2024"),
-        dict(rotulo="Velocidade do ônibus no pico", valor=br(R["vel_2025"], 1), unidade="km/h", icone="velocidade", cor="vermelho",
-             delta=f"{br(R['var_vel_pct'], 0)}%", tom="ruim", nota="2022 → 2025"),
-        dict(rotulo="Passageiros do metrô (2025)", valor="117,5", unidade="mi", icone="trem", cor="aqua",
-             delta="recorde", tom="bom", nota="igual a 2024"),
-    ])
-
     c1, c2 = st.columns([1.6, 1], gap="medium")
     with c1:
-        b = base[(base["ano"] >= max(anos[0], 2014)) & (base["ano"] <= anos[1])]
+        b = base[base["ano"] >= 2014]
         fig = go.Figure()
         for col, nome, cor in [("populacao", "População", CINZA), ("autos", "Automóveis e utilitários", LARANJA), ("motos", "Motos", AQUA)]:
-            fig.add_scatter(x=b["ano"], y=b[col] / b[col].iloc[0] * 100, name=nome, mode="lines+markers",
+            serie = b[col] / b[col].iloc[0] * 100
+            fig.add_scatter(x=b["ano"], y=serie, name=nome, mode="lines+markers",
                             line=dict(color=cor, width=3, shape="spline", smoothing=.5), marker=dict(size=7, line=dict(color="white", width=1.5)),
                             hovertemplate="%{y:.1f}")
+            fig.add_annotation(x=b["ano"].iloc[-1], y=serie.iloc[-1], text=f"<b>{br(serie.iloc[-1])}</b>", showarrow=False, xanchor="left", xshift=8,
+                               font=dict(size=12, color=cor))
         fig.add_hline(y=100, line_color=CINZA_CLARO, line_width=1)
-        grafico(layout(fig, "Menos gente, muito mais veículos", f"Índice, {b['ano'].iloc[0]} = 100", "índice", 400))
+        fig.update_xaxes(range=[2013.6, 2026])
+        grafico(layout(fig, "Menos gente, muito mais veículos", "Índice, 2014 = 100", "índice", 400))
         ui.fonte("SENATRAN (frota em dezembro) e IBGE (população compatibilizada)")
     with c2:
         ui.corrida(R["tempo_onibus_min"], R["tempo_auto_min"], "Casa ao trabalho: ônibus contra carro",
@@ -157,6 +171,14 @@ with abas[0]:
                 f"<b>{br(R['ef_metro_pct'])}%</b>. O restante vem do carro, da moto e da perda de qualidade do serviço.",
                 cor="laranja", icone="alerta")
         ui.fonte("IBGE, Censo 2022 (tab. 10330); decomposição do projeto")
+
+    ui.linha_tempo("Uma década de mudanças", [
+        ("2010", "Censo", "Salvador tinha <b>2,68 milhões</b> de habitantes.", "marinho"),
+        ("2014", "Metrô inaugurado", "A cidade tinha <b>300</b> autos e motos por mil habitantes.", "azul"),
+        ("2020", "Pandemia", "Metrô cai para <b>62 milhões</b> de passageiros no ano.", "vermelho"),
+        ("2022", "Censo e BRT", "População de <b>2,42 milhões</b> (−9,6%); BRT começa a operar.", "laranja"),
+        ("2024", "Recorde no metrô", "Metrô com <b>117,5 milhões</b>; ônibus com <b>1,25 milhão</b> por dia.", "aqua"),
+    ])
 
     ui.secao("Em cinco pontos", "O que os dados mostram")
     ui.achados([
@@ -237,51 +259,51 @@ with abas[2]:
                 .update_layout(hovermode="closest"))
         ui.fonte("SEMOB (passageiros/dia), IBGE (população), CTB (metrô); decomposição do projeto")
 
-    m = mensal.dropna(subset=["indice_metro_2024_100"])
-    opcoes_mes = list(m["data"].dt.strftime("%m/%Y"))
-    periodo = st.select_slider("Meses exibidos", options=opcoes_mes, value=(opcoes_mes[0], opcoes_mes[-1]))
-    ini, fim = [pd.to_datetime(x, format="%m/%Y") for x in periodo]
-    mm = m[(m["data"] >= ini) & (m["data"] <= fim)]
-    fig = go.Figure()
-    fig.add_scatter(x=mm["data"], y=mm["indice_onibus_2024_100"], name="Ônibus urbanos (SEI-BA/IMEC)", mode="lines+markers",
-                    line=dict(color=AZUL, width=3, shape="spline", smoothing=.4), marker=dict(size=6), hovertemplate="%{y:.1f}")
-    fig.add_scatter(x=mm["data"], y=mm["indice_metro_2024_100"], name="Metrô (CTB)", mode="lines+markers",
-                    line=dict(color=LARANJA, width=3, shape="spline", smoothing=.4), marker=dict(size=6), hovertemplate="%{y:.1f}")
-    fig.add_hline(y=100, line_color=CINZA_CLARO, line_width=1)
-    eixo_mes_pt(fig, mm["data"], 3 if len(mm) > 12 else 1)
-    grafico(layout(fig, "Passageiros por mês", f"Índice (média de 2024 = 100); correlação entre os dois sistemas r = {br(R['corr_mensal_onibus_metro'], 2)}", "índice"))
-    ui.fonte("SEI-BA, IMEC (dados SETPS); CTB, demonstrativo mensal do metrô")
+    @st.fragment
+    def mensal_onibus_metro():
+        m = mensal.dropna(subset=["indice_metro_2024_100"])
+        opcoes = list(m["data"].dt.strftime("%m/%Y"))
+        periodo = st.select_slider("Meses exibidos", options=opcoes, value=(opcoes[0], opcoes[-1]), key="meses")
+        ini, fim = [pd.to_datetime(x, format="%m/%Y") for x in periodo]
+        mm = m[(m["data"] >= ini) & (m["data"] <= fim)]
+        fig = go.Figure()
+        fig.add_scatter(x=mm["data"], y=mm["indice_onibus_2024_100"], name="Ônibus urbanos (SEI-BA/IMEC)", mode="lines+markers",
+                        line=dict(color=AZUL, width=3, shape="spline", smoothing=.4), marker=dict(size=6), hovertemplate="%{y:.1f}")
+        fig.add_scatter(x=mm["data"], y=mm["indice_metro_2024_100"], name="Metrô (CTB)", mode="lines+markers",
+                        line=dict(color=LARANJA, width=3, shape="spline", smoothing=.4), marker=dict(size=6), hovertemplate="%{y:.1f}")
+        fig.add_hline(y=100, line_color=CINZA_CLARO, line_width=1)
+        eixo_mes_pt(fig, mm["data"], 3 if len(mm) > 12 else 1)
+        grafico(layout(fig, "Passageiros por mês", f"Índice (média de 2024 = 100); correlação entre os dois sistemas r = {br(R['corr_mensal_onibus_metro'], 2)}", "índice"),
+                key="mensal")
+        ui.fonte("SEI-BA, IMEC (dados SETPS); CTB, demonstrativo mensal do metrô")
+
+    mensal_onibus_metro()
 
 # ----------------------------------------------------------------------------
 # 4. Trânsito e motorização
 # ----------------------------------------------------------------------------
 with abas[3]:
     ui.secao("Trânsito e motorização", "Mais carros e motos, menos velocidade para todos",
-             "A frota cresceu muito mais rápido que a população, e o ônibus divide a mesma pista congestionada.")
-    col1, col2 = st.columns(2, gap="medium")
+             "A frota cresceu muito mais rápido que a população, e o ônibus divide a mesma pista congestionada. Use o botão para ver a evolução ano a ano.")
+    col1, col2 = st.columns([1.15, 1], gap="medium")
     with col1:
-        fig = go.Figure()
-        pc = painel[(painel["municipio"].isin(sel_cap)) & (painel["ano"].between(*anos))]
-        finais = []
-        for mu, g in sorted(pc.groupby("municipio"), key=lambda x: x[0] == SSA):
-            fig.add_scatter(x=g["ano"], y=g["motorizacao_por_mil_hab"], name=mu, mode="lines",
-                            line=dict(color=AZUL if mu == SSA else CINZA_CLARO, width=3.5 if mu == SSA else 1.6),
-                            hovertemplate=f"{mu}: " + "%{y:.0f}<extra></extra>")
-            ult = g.sort_values("ano").iloc[-1]
-            finais.append([ult["motorizacao_por_mil_hab"], mu, ult["ano"]])
-        # afasta os rótulos que ficariam um sobre o outro
-        finais.sort()
-        if finais:
-            vmin, vmax = pc["motorizacao_por_mil_hab"].min(), pc["motorizacao_por_mil_hab"].max()
-            folga = (vmax - vmin) * 0.065
-            for k in range(1, len(finais)):
-                finais[k][0] = max(finais[k][0], finais[k - 1][0] + folga)
-        for yv, mu, xv in finais:
-            fig.add_annotation(x=xv, y=yv, text=f"<b>{mu}</b>" if mu == SSA else mu, showarrow=False, xanchor="left", xshift=8,
-                               font=dict(size=11.5, color=AZUL if mu == SSA else CINZA))
-        fig.update_xaxes(range=[anos[0] - .3, anos[1] + .3])
-        grafico(layout(fig, "Autos e motos por mil habitantes", "Salvador em azul; demais capitais escolhidas na barra lateral", "veículos por mil hab.")
-                .update_layout(showlegend=False, hovermode="closest", margin_r=128))
+        pc = painel.pivot_table(index="municipio", columns="ano", values="motorizacao_por_mil_hab")
+        ordem = pc[2025].sort_values().index.tolist()
+        anos_m = list(range(2014, 2026))
+        cores = [AZUL if m == SSA else "#cfcdc5" for m in ordem]
+
+        def barras(a):
+            v = pc.loc[ordem, a]
+            return go.Bar(y=ordem, x=v, orientation="h", marker=dict(color=cores, cornerradius=5),
+                          text=[f"<b>{br(x)}</b>" if m == SSA else br(x) for m, x in zip(ordem, v)], textposition="outside", cliponaxis=False,
+                          hovertemplate="%{y}: %{x:.0f} veículos por mil hab.<extra></extra>")
+
+        fig = go.Figure(data=[barras(2025)], frames=[go.Frame(data=[barras(a)], name=f"m{a}") for a in anos_m])
+        fig.update_xaxes(range=[0, pc.max().max() * 1.16], showgrid=True, gridcolor="#ecebe5")
+        layout(fig, "Autos e motos por mil habitantes nas capitais", "Salvador em azul; 2014 a 2025", "", 520)
+        fig.update_layout(hovermode="closest", margin=dict(l=6, r=40, t=74, b=118))
+        botoes_animacao(fig, anos_m, "m")
+        grafico(fig, key="corrida_motorizacao")
         ui.fonte("SENATRAN e IBGE; frota de dezembro de cada ano")
     with col2:
         t = D["tempo_medio_por_meio_censo2022"]
@@ -292,7 +314,7 @@ with abas[3]:
                                text=t["tempo_medio_min"].round(0).astype(int).astype(str) + " min", textposition="outside", cliponaxis=False,
                                customdata=t["trabalhadores"], hovertemplate="%{x:.1f} min · %{customdata:,.0f} trabalhadores<extra></extra>"))
         fig.update_xaxes(range=[0, t["tempo_medio_min"].max() * 1.4])
-        grafico(layout(fig, "Tempo de casa ao trabalho por meio", "Salvador, 2022; transporte coletivo em azul").update_layout(hovermode="closest"))
+        grafico(layout(fig, "Tempo de casa ao trabalho por meio", "Salvador, 2022; transporte coletivo em azul", "", 520).update_layout(hovermode="closest"))
         ui.fonte("IBGE, Censo 2022, tab. 10330 (tempo estimado pelo ponto médio das faixas)")
 
     ui.secao("Pergunta central", "Ampliar a oferta de ônibus pioraria o trânsito?")
@@ -313,39 +335,69 @@ with abas[3]:
 # ----------------------------------------------------------------------------
 with abas[4]:
     ui.secao("Salvador entre as capitais", "A capital onde mais se usa o ônibus",
-             "Comparação com as capitais de mais de um milhão de habitantes no Censo 2022.")
+             "Comparação com as 13 capitais que tinham mais de um milhão de habitantes no Censo 2022.")
     dl = D["deslocamento_capitais_censo"]
-    col1, col2 = st.columns(2, gap="medium")
+    pop22 = D["populacao_capitais"].query("ano == 2022").set_index("municipio")["populacao"]
+    col1, col2 = st.columns([1, 1.05], gap="medium")
     with col1:
-        opcoes = {"% em transporte coletivo": "pct_coletivo", "% de ônibus": "pct_onibus", "% de automóvel": "pct_automovel",
-                  "% de moto": "pct_moto", "% a pé ou de bicicleta": "pct_ativo", "tempo médio (min)": "tempo_medio_2022_min",
-                  "% que leva mais de 1 hora": "pct_mais_1h_2022"}
-        escolha = st.selectbox("Indicador do Censo 2022", list(opcoes))
-        col = opcoes[escolha]
-        dd = dl[dl["municipio"].isin(sel_cap)].sort_values(col)
-        fig = go.Figure(go.Bar(y=dd["municipio"], x=dd[col], orientation="h",
-                               marker=dict(color=[AZUL if mu == SSA else CINZA_CLARO for mu in dd["municipio"]], cornerradius=5),
-                               text=dd[col].map(lambda v: br(v, 1)), textposition="outside", cliponaxis=False, hovertemplate="%{x:.1f}<extra></extra>"))
-        fig.update_xaxes(range=[0, dd[col].max() * 1.22])
-        grafico(layout(fig, escolha[0].upper() + escolha[1:], "Trabalhadores, 2022; Salvador em azul").update_layout(hovermode="closest"))
-        ui.fonte("IBGE, Censo 2022, tab. 10330 e 10332")
-    with col2:
-        g = D["grupos_capitais"]
         fig = go.Figure()
-        x = g["pct_coletivo"]
-        coef = np.polyfit(x, g["tempo_medio_2022_min"], 1)
-        xx = np.linspace(x.min(), x.max(), 20)
-        fig.add_scatter(x=xx, y=np.polyval(coef, xx), mode="lines", name="tendência linear", line=dict(color=CINZA, dash="dash"), hoverinfo="skip")
-        for (nome, gg), cor in zip(g.groupby("grupo_nome"), [AZUL, LARANJA, AQUA]):
-            fig.add_scatter(x=gg["pct_coletivo"], y=gg["tempo_medio_2022_min"], mode="markers+text", name=nome, customdata=gg["municipio"],
-                            text=[m if m in sel_cap else "" for m in gg["municipio"]], textposition=["middle left" if xv >= 49.5 else "top center" for xv in gg["pct_coletivo"]], cliponaxis=False,
-                            marker=dict(size=[18 if m == SSA else 12 for m in gg["municipio"]], color=cor, line=dict(color="white", width=2)),
-                            hovertemplate="%{customdata}: %{x:.1f}% coletivo · %{y:.1f} min<extra></extra>")
-        grafico(layout(fig, "Mais coletivo, viagens mais longas", "Grupos de capitais por k-means", "tempo médio casa-trabalho (min)", 470)
-                .update_layout(hovermode="closest", xaxis_title="% dos trabalhadores em transporte coletivo",
-                               legend=dict(orientation="v", x=.01, y=.99, xanchor="left", yanchor="top", bgcolor="rgba(255,255,255,.85)",
-                                           bordercolor="#ecebe5", borderwidth=1, font=dict(size=11.5))))
-        ui.fonte(f"IBGE, Censo 2022; Spearman ρ = {br(R['rho_coletivo_tempo'], 2)} (p < 0,001); regressão com densidade: R² = {br(R['ols_r2'], 2)}")
+        for nome, aneis in D["mapa"].items():
+            for anel in aneis:
+                xs, ys = zip(*anel)
+                fig.add_scatter(x=xs, y=ys, mode="lines", fill="toself", hoverinfo="skip", showlegend=False,
+                                line=dict(color="#ffffff", width=1.2), fillcolor="#e3e8ef" if nome == "Brazil" else "#f0efeb")
+        dm = dl.assign(lon=dl["municipio"].map(lambda m: COORD[m][0]), lat=dl["municipio"].map(lambda m: COORD[m][1]),
+                       pop=dl["municipio"].map(pop22))
+        fig.add_scatter(x=dm["lon"], y=dm["lat"], mode="markers", showlegend=False,
+                        marker=dict(size=np.sqrt(dm["pop"]) / 38, color=dm["pct_coletivo"], colorscale=[[0, "#cfe0f5"], [1, "#0e3a78"]],
+                                    cmin=dm["pct_coletivo"].min(), cmax=dm["pct_coletivo"].max(), line=dict(color="white", width=1.5), opacity=.92,
+                                    colorbar=dict(title=dict(text="% coletivo", font=dict(size=11)), thickness=10, len=.42, x=.03, xanchor="left", y=.24,
+                                                  tickfont=dict(size=10), outlinewidth=0)),
+                        customdata=np.stack([dm["municipio"], dm["pct_coletivo"], dm["pop"] / 1e6], axis=1),
+                        hovertemplate="<b>%{customdata[0]}</b><br>%{customdata[1]:.1f}% em transporte coletivo<br>%{customdata[2]:.2f} mi hab.<extra></extra>")
+        ssa = dm[dm["municipio"] == SSA].iloc[0]
+        fig.add_annotation(x=ssa["lon"], y=ssa["lat"], text=f"<b>Salvador</b><br>{br(ssa['pct_coletivo'], 1)}% coletivo", showarrow=True, arrowhead=0,
+                           ax=72, ay=-12, font=dict(size=12, color=AZUL), arrowcolor=AZUL, bgcolor="rgba(255,255,255,.88)", borderpad=3)
+        fig.update_xaxes(visible=False, range=[-74.5, -33])
+        fig.update_yaxes(visible=False, range=[-34.5, 6.5], scaleanchor="x", scaleratio=1)
+        layout(fig, "As 13 capitais do estudo", "Tamanho = população (2022); cor = % de trabalhadores no transporte coletivo", "", 540)
+        fig.update_layout(hovermode="closest", margin=dict(l=0, r=0, t=74, b=0))
+        grafico(fig, key="mapa_capitais")
+        ui.fonte("IBGE, Censo 2022 (tab. 4709 e 10332); contornos: Natural Earth")
+    with col2:
+        @st.fragment
+        def barras_indicador():
+            opcoes = {"% em transporte coletivo": "pct_coletivo", "% de ônibus": "pct_onibus", "% de automóvel": "pct_automovel",
+                      "% de moto": "pct_moto", "% a pé ou de bicicleta": "pct_ativo", "Tempo médio (min)": "tempo_medio_2022_min",
+                      "% que leva mais de 1 hora": "pct_mais_1h_2022"}
+            escolha = st.selectbox("Indicador do Censo 2022", list(opcoes), key="indicador")
+            col = opcoes[escolha]
+            dd = dl.sort_values(col)
+            fig = go.Figure(go.Bar(y=dd["municipio"], x=dd[col], orientation="h",
+                                   marker=dict(color=[AZUL if mu == SSA else CINZA_CLARO for mu in dd["municipio"]], cornerradius=5),
+                                   text=[f"<b>{br(v, 1)}</b>" if mu == SSA else br(v, 1) for mu, v in zip(dd["municipio"], dd[col])],
+                                   textposition="outside", cliponaxis=False, hovertemplate="%{y}: %{x:.1f}<extra></extra>"))
+            fig.update_xaxes(range=[0, dd[col].max() * 1.18])
+            grafico(layout(fig, escolha, "Trabalhadores, 2022; Salvador em azul", "", 470).update_layout(hovermode="closest"), key="barras_ind")
+            ui.fonte("IBGE, Censo 2022, tab. 10330 e 10332")
+        barras_indicador()
+
+    g = D["grupos_capitais"]
+    fig = go.Figure()
+    x = g["pct_coletivo"]
+    coef = np.polyfit(x, g["tempo_medio_2022_min"], 1)
+    xx = np.linspace(x.min(), x.max(), 20)
+    fig.add_scatter(x=xx, y=np.polyval(coef, xx), mode="lines", name="tendência linear", line=dict(color=CINZA, dash="dash"), hoverinfo="skip")
+    for (nome, gg), cor in zip(g.groupby("grupo_nome"), [AZUL, LARANJA, AQUA]):
+        fig.add_scatter(x=gg["pct_coletivo"], y=gg["tempo_medio_2022_min"], mode="markers+text", name=nome, customdata=gg["municipio"],
+                        text=gg["municipio"], textposition=["middle left" if xv >= 49.5 else "top center" for xv in gg["pct_coletivo"]], cliponaxis=False,
+                        marker=dict(size=[20 if m == SSA else 13 for m in gg["municipio"]], color=cor, line=dict(color="white", width=2)),
+                        textfont=dict(size=11.5), hovertemplate="%{customdata}: %{x:.1f}% coletivo · %{y:.1f} min<extra></extra>")
+    grafico(layout(fig, "Mais transporte coletivo, viagens mais longas", f"Grupos de capitais por k-means; Spearman ρ = {br(R['rho_coletivo_tempo'], 2)} (p < 0,001)",
+                   "tempo médio casa-trabalho (min)", 460)
+            .update_layout(hovermode="closest", xaxis_title="% dos trabalhadores em transporte coletivo",
+                           legend=dict(orientation="h", x=0, y=1.0, yanchor="bottom", font=dict(size=11.5))))
+    ui.fonte(f"IBGE, Censo 2022; regressão com densidade: R² = {br(R['ols_r2'], 2)}")
 
 # ----------------------------------------------------------------------------
 # 6. Projeções 2030
@@ -378,29 +430,36 @@ with abas[5]:
 
     ui.secao("Simulador", "Monte o seu cenário para 2030",
              "Escolha a variação anual e veja onde ônibus e metrô chegariam. Pontos de partida: ônibus 1,25 mi passageiros/dia (SEMOB, 2024) e metrô 117,5 mi/ano (CTB, 2025).")
-    s1, s2 = st.columns(2, gap="large")
-    g_on = s1.slider("Ônibus: variação ao ano (%)", -8.0, 4.0, -3.0, 0.5)
-    g_me = s2.slider("Metrô: variação ao ano (%)", -3.0, 6.0, 1.0, 0.5)
-    anos_c = np.arange(2024, 2031)
-    on = R["stco_pass_dia_2024"] * (1 + g_on / 100) ** (anos_c - 2024)
-    me = np.where(anos_c == 2024, 117.533257e6, 117.5e6 * (1 + g_me / 100) ** (anos_c - 2025))
-    v_on, v_me = (on[-1] / on[0] - 1) * 100, (me[-1] / 117.5e6 - 1) * 100
-    ui.kpis([
-        dict(rotulo="Ônibus em 2030 (passageiros/dia)", valor=br(on[-1] / 1e6, 2), unidade="mi", icone="onibus", cor="azul",
-             delta=f"{sinal(v_on)}%", tom="bom" if v_on > 0 else "ruim", nota="vs 2024"),
-        dict(rotulo="Metrô em 2030 (passageiros/ano)", valor=br(me[-1] / 1e6, 1), unidade="mi", icone="trem", cor="aqua",
-             delta=f"{sinal(v_me)}%", tom="bom" if v_me > 0 else "ruim", nota="vs 2025"),
-        dict(rotulo="População projetada em 2030", valor=br(R["pop_2030"] / 1e6, 2), unidade="mi", icone="pessoas", cor="marinho",
-             nota="tendência do IBGE"),
-    ])
-    cen = D["cenarios_2030"]
-    fig = go.Figure()
-    for nome, cor in zip(["Pessimista", "Tendencial", "Otimista"], [VERMELHO, CINZA, AQUA]):
-        cc = cen[cen["cenario"] == nome]
-        fig.add_scatter(x=cc["ano"], y=cc["onibus_pass_dia"] / 1e6, name=nome, line=dict(color=cor, width=1.6, dash="dot"))
-    fig.add_scatter(x=anos_c, y=on / 1e6, name="Seu cenário", mode="lines+markers", line=dict(color=AZUL, width=3.5),
-                    marker=dict(size=8, line=dict(color="white", width=2)))
-    grafico(layout(fig, "Ônibus (STCO): passageiros por dia até 2030", "Milhões; linhas pontilhadas são os cenários do relatório", "milhões/dia", 360))
+
+    @st.fragment
+    def simulador():
+        s1, s2 = st.columns(2, gap="large")
+        g_on = s1.slider("Ônibus: variação ao ano (%)", -8.0, 4.0, -3.0, 0.5, key="g_on")
+        g_me = s2.slider("Metrô: variação ao ano (%)", -3.0, 6.0, 1.0, 0.5, key="g_me")
+        anos_c = np.arange(2024, 2031)
+        on = R["stco_pass_dia_2024"] * (1 + g_on / 100) ** (anos_c - 2024)
+        me = np.where(anos_c == 2024, 117.533257e6, 117.5e6 * (1 + g_me / 100) ** (anos_c - 2025))
+        v_on, v_me = (on[-1] / on[0] - 1) * 100, (me[-1] / 117.5e6 - 1) * 100
+        ui.kpis([
+            dict(rotulo="Ônibus em 2030 (passageiros/dia)", valor=br(on[-1] / 1e6, 2), unidade="mi", icone="onibus", cor="azul",
+                 delta=f"{sinal(v_on)}%", tom="bom" if v_on > 0 else "ruim", nota="vs 2024"),
+            dict(rotulo="Metrô em 2030 (passageiros/ano)", valor=br(me[-1] / 1e6, 1), unidade="mi", icone="trem", cor="aqua",
+                 delta=f"{sinal(v_me)}%", tom="bom" if v_me > 0 else "ruim", nota="vs 2025"),
+            dict(rotulo="População projetada em 2030", valor=br(R["pop_2030"] / 1e6, 2), unidade="mi", icone="pessoas", cor="marinho",
+                 nota="tendência do IBGE"),
+        ])
+        cen = D["cenarios_2030"]
+        fig = go.Figure()
+        for nome, cor in zip(["Pessimista", "Tendencial", "Otimista"], [VERMELHO, CINZA, AQUA]):
+            cc = cen[cen["cenario"] == nome]
+            fig.add_scatter(x=cc["ano"], y=cc["onibus_pass_dia"] / 1e6, name=nome, line=dict(color=cor, width=1.6, dash="dot"))
+        fig.add_scatter(x=anos_c, y=on / 1e6, name="Seu cenário", mode="lines+markers", line=dict(color=AZUL, width=3.5),
+                        marker=dict(size=8, line=dict(color="white", width=2)))
+        fig.update_yaxes(range=[0.6, 1.6])
+        grafico(layout(fig, "Ônibus (STCO): passageiros por dia até 2030", "Milhões; linhas pontilhadas são os cenários do relatório", "milhões/dia", 360),
+                key="sim_grafico")
+
+    simulador()
 
 # ----------------------------------------------------------------------------
 # 7. Recomendações
@@ -422,11 +481,16 @@ with abas[7]:
                "Painel das capitais (2014–2025)": "painel_capitais_anual", "Deslocamento casa-trabalho (Censos)": "deslocamento_capitais_censo",
                "PEMOB das capitais": "pemob_capitais", "Valores de documentos oficiais": "fontes_documentais",
                "Dicionário de dados": "dicionario_dados"}
-    c1, c2 = st.columns([3, 1], vertical_alignment="bottom")
-    escolha = c1.selectbox("Tabela", list(tabelas))
-    df = D[tabelas[escolha]]
-    c2.download_button("Baixar CSV", df.to_csv(index=False).encode("utf-8"), file_name=f"{tabelas[escolha]}.csv", mime="text/csv", width="stretch")
-    st.dataframe(df, width="stretch", height=380)
+
+    @st.fragment
+    def consulta():
+        c1, c2 = st.columns([3, 1], vertical_alignment="bottom")
+        escolha = c1.selectbox("Tabela", list(tabelas), key="tabela")
+        df = D[tabelas[escolha]]
+        c2.download_button("Baixar CSV", df.to_csv(index=False).encode("utf-8"), file_name=f"{tabelas[escolha]}.csv", mime="text/csv", width="stretch")
+        st.dataframe(df, width="stretch", height=380)
+
+    consulta()
     ui.secao("Fontes", "Instituições de onde vêm os dados")
     ui.fontes_oficiais([
         ("IBGE", "Censos 2010 e 2022, Estimativas da População e IPCA (API SIDRA: tabelas 6579, 4709, 4714, 10330, 10332, 10333, 3604 e 1737)"),
