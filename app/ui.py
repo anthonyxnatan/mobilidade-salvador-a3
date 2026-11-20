@@ -102,7 +102,7 @@ CSS = """
 [data-testid="stColumn"] { animation: entra .7s var(--curva) both; }
 [data-testid="stColumn"]:nth-child(2) { animation-delay: .08s } [data-testid="stColumn"]:nth-child(3) { animation-delay: .16s }
 [data-testid="stColumn"]:nth-child(4) { animation-delay: .24s }
-[data-testid="stPlotlyChart"] { background: var(--cartao); border: 1px solid var(--linha); border-radius: 18px; padding: 14px 16px 6px;
+[data-testid="stPlotlyChart"] { background: var(--cartao); border: 1px solid var(--linha); border-radius: 18px; padding: 14px 16px 14px;
   box-shadow: var(--sombra); transition: box-shadow .35s var(--curva), transform .35s var(--curva); }
 [data-testid="stPlotlyChart"]:hover { box-shadow: var(--sombra-alta); }
 .secao { margin: 10px 0 14px; animation: entra .7s var(--curva) both; }
