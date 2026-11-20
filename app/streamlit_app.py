@@ -28,7 +28,7 @@ SSA = "Salvador"
 CFG = {"displayModeBar": False, "responsive": True}
 REPO = "https://github.com/anthonyxnatan/mobilidade-salvador-a3"
 LINKS = [("Relatório", f"{REPO}/blob/main/relatorios/Relatorio_Final_A3.pdf", "livro"),
-         ("Vídeo", "https://www.youtube.com/watch?v=KZsl3WzzS_g", "video"),
+         ("Vídeo", "https://youtu.be/loBg9GbHmdU", "video"),
          ("GitHub", REPO, "codigo")]
 EQUIPE = ["Anthony Natan Santos Pereira", "Caio Branco Marques", "Clara Gil Moreira de Alencar Santiago",
           "Fernanda Santos da Silva", "Lukas Carneiro Rocha"]
