@@ -35,7 +35,7 @@ CSS = """
 :is(.hero, .kpis, .secao, .fonte, .nota, .achados, .corrida, .grades, .tab-oferta, .recs, .hips, .fontes, .rodape, .lat-marca, .lat-titulo, .lat-equipe, .lat-links),
 :is(.hero, .kpis, .secao, .fonte, .nota, .achados, .corrida, .grades, .tab-oferta, .recs, .hips, .fontes, .rodape, .lat-marca, .lat-titulo, .lat-equipe, .lat-links) * { font-family: var(--fonte) !important; }
 .stApp h1, .stApp h2, .stApp h3, .stApp h4 { font-family: 'Inter', system-ui, sans-serif; letter-spacing: -.02em; }
-[data-testid="stHeader"] { background: transparent; height: 2.5rem; }
+[data-testid="stHeader"] { background: transparent; height: 0; min-height: 0; pointer-events: none; }
 [data-testid="stToolbar"], [data-testid="stDecoration"], footer { display: none !important; }
 [data-testid="stMainBlockContainer"], .block-container { padding-top: 1.1rem; padding-bottom: 2rem; max-width: 1340px; }
 
