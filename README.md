@@ -18,8 +18,8 @@ Professor: **Eduardo Sidney da Silva Xavier**. Entrega final: 03/12/2026.
 | Anthony Natan Santos Pereira | 12725158136 |
 | Caio Branco Marques | 12725131949 |
 | Clara Gil Moreira de Alencar Santiago | 12725138774 |
-| Fernanda Santos da Silva | 1272617082 |
 | Lukas Carneiro Rocha | 12725157428 |
+| Pedro Henrique Almeida Chaves | 12722120616 |
 
 ## O que o projeto investiga
 

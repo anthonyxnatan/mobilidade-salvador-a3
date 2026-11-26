@@ -31,7 +31,7 @@ LINKS = [("Relatório", f"{REPO}/blob/main/relatorios/Relatorio_Final_A3.pdf", "
          ("Vídeo", "https://youtu.be/loBg9GbHmdU", "video"),
          ("GitHub", REPO, "codigo")]
 EQUIPE = ["Anthony Natan Santos Pereira", "Caio Branco Marques", "Clara Gil Moreira de Alencar Santiago",
-          "Fernanda Santos da Silva", "Lukas Carneiro Rocha"]
+          "Lukas Carneiro Rocha", "Pedro Henrique Almeida Chaves"]
 PROF = "Prof. Eduardo Sidney da Silva Xavier"
 UC = "UC Análise de Dados e Big Data"
 COORD = {"Belém": (-48.49, -1.46), "Belo Horizonte": (-43.94, -19.92), "Brasília": (-47.88, -15.79), "Curitiba": (-49.27, -25.43),
