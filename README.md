@@ -6,7 +6,7 @@ Professor: **Eduardo Sidney da Silva Xavier**. Entrega final: 03/12/2026.
 | Entrega | Link |
 |---|---|
 | Dashboard interativo (Streamlit) | https://mobilidade-salvador.streamlit.app |
-| Vídeo de apresentação (YouTube) | [https://youtu.be/loBg9GbHmdU](https://youtu.be/loBg9GbHmdU) |
+| Vídeo de apresentação (YouTube) | [https://www.youtube.com/watch?v=Gb86Mny68zg](https://www.youtube.com/watch?v=Gb86Mny68zg) |
 | Relatório final (ETL, EDA, diagnóstico, previsões e prescrições) | [PDF](relatorios/Relatorio_Final_A3.pdf) · [Word](relatorios/Relatorio_Final_A3.docx) |
 | Notebook de ETL | [notebooks/01_ETL.ipynb](notebooks/01_ETL.ipynb) |
 | Notebook de análises | [notebooks/02_Analises.ipynb](notebooks/02_Analises.ipynb) |
