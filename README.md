@@ -57,12 +57,15 @@ A lista completa, com URL e data de acesso de cada valor, está em
 ## Estrutura do repositório
 
 ```
-├── app/streamlit_app.py          # dashboard interativo
+├── app/
+│   ├── streamlit_app.py          # dashboard interativo
+│   ├── ui.py                     # componentes visuais do dashboard
+│   └── assets/                   # logo e contornos do mapa
 ├── data/
 │   ├── raw/                      # arquivos originais, como foram baixados (com hash SHA-256)
 │   ├── processed/                # tabelas tratadas em CSV (saída do ETL e das análises)
 │   └── db/mobilidade_salvador.sqlite   # banco SQLite com todas as tabelas tratadas
-├── figuras/                      # 18 gráficos do relatório 2 e capturas do dashboard
+├── figuras/                      # gráficos do relatório e capturas do dashboard
 ├── notebooks/
 │   ├── 01_ETL.ipynb              # extração, transformação, carga e testes de qualidade
 │   └── 02_Analises.ipynb         # EDA, diagnóstico, previsões e prescrições
@@ -75,32 +78,6 @@ A lista completa, com URL e data de acesso de cada valor, está em
 └── requirements-notebooks.txt    # pacotes da coleta, do ETL e das análises
 ```
 
-## Como rodar
-
-### No computador
-
-```bash
-pip install -r requirements-notebooks.txt
-python scripts/coleta_dados_brutos.py      # opcional: os dados brutos já estão em data/raw
-jupyter notebook notebooks/01_ETL.ipynb    # rode todas as células (gera data/processed e o SQLite)
-jupyter notebook notebooks/02_Analises.ipynb
-streamlit run app/streamlit_app.py         # abre o dashboard em http://localhost:8501
-```
-
-### No Google Colab
-
-1. Abra o notebook pelo GitHub: no Colab, vá em **Arquivo → Abrir notebook → GitHub** e cole o endereço deste repositório.
-2. Na primeira célula, troque `REPO_GITHUB` pelo endereço do repositório.
-3. Rode tudo (**Ambiente de execução → Executar tudo**). O notebook baixa o repositório e instala o que falta sozinho.
-
-## Como publicar o dashboard (Streamlit Community Cloud)
-
-1. Entre em <https://share.streamlit.io> com a conta do GitHub.
-2. Clique em **Create app → Deploy a public app from GitHub**.
-3. Escolha este repositório, a branch `main` e o arquivo principal `app/streamlit_app.py`.
-4. Clique em **Deploy**. Em 2 ou 3 minutos o painel fica no ar.
-5. O painel está publicado em https://mobilidade-salvador.streamlit.app.
-
 ## Principais números
 
 | Indicador | Valor | Fonte |
@@ -111,7 +88,7 @@ streamlit run app/streamlit_app.py         # abre o dashboard em http://localhos
 | Velocidade do ônibus no pico (2022 → 2025) | 21,5 → 16,5 km/h | PEMOB |
 | Passageiros do metrô (2025) | 117,5 milhões | CTB |
 | Trabalhadores que vão de ônibus (2022) | 44,7%, maior entre as capitais | IBGE, Censo 2022 |
-| Tempo médio casa-trabalho: ônibus × carro (2022) | 59 × 32,5 min | IBGE, Censo 2022 |
+| Tempo médio casa-trabalho: ônibus × carro (2022) | 59,2 × 32,5 min | IBGE, Censo 2022 |
 
 ## Uso
 

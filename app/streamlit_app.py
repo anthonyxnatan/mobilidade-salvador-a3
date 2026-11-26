@@ -186,7 +186,7 @@ with abas[0]:
         ("Os veículos cresceram muito", f"Desde 2014, <b>+{br(R['var_autos_2014_2025_pct'])}% de autos</b> e <b>+{br(R['var_motos_2014_2025_pct'])}% de motos</b>."),
         ("O ônibus perdeu um sexto dos passageiros", f"Queda de <b>{br(-R['var_pass_dia_2019_2024_pct'])}%</b> entre 2019 e 2024, cerca de 250 mil viagens a menos por dia."),
         ("O serviço ficou mais lento e menos confiável", f"Velocidade no pico de {br(R['vel_2022'], 1)} para <b>{br(R['vel_2025'], 1)} km/h</b>; viagens não completadas de {br(R['nao_completadas_2022'])}% para <b>{br(R['nao_completadas_2025'], 1)}%</b>."),
-        ("Quem depende do ônibus perde tempo", f"A viagem casa-trabalho de ônibus leva <b>{br(R['tempo_onibus_min'])} min</b>, contra <b>{br(R['tempo_auto_min'])} min</b> de carro."),
+        ("Quem depende do ônibus perde tempo", f"A viagem casa-trabalho de ônibus leva <b>{br(R['tempo_onibus_min'], 1)} min</b>, contra <b>{br(R['tempo_auto_min'], 1)} min</b> de carro."),
     ])
 
 # ----------------------------------------------------------------------------
@@ -311,7 +311,7 @@ with abas[3]:
         coletivos = {"Ônibus", "Trem ou metrô", "Van, perua ou assemelhados", "BRT ou ônibus de trânsito rápido"}
         fig = go.Figure(go.Bar(y=t["meio_transporte"], x=t["tempo_medio_min"], orientation="h",
                                marker=dict(color=[AZUL if x in coletivos else CINZA_CLARO for x in t["meio_transporte"]], cornerradius=5),
-                               text=t["tempo_medio_min"].round(0).astype(int).astype(str) + " min", textposition="outside", cliponaxis=False,
+                               text=t["tempo_medio_min"].map(lambda v: br(v, 1)) + " min", textposition="outside", cliponaxis=False,
                                customdata=t["trabalhadores"], hovertemplate="%{x:.1f} min · %{customdata:,.0f} trabalhadores<extra></extra>"))
         fig.update_xaxes(range=[0, t["tempo_medio_min"].max() * 1.4])
         grafico(layout(fig, "Tempo de casa ao trabalho por meio", "Salvador, 2022; transporte coletivo em azul", "", 520).update_layout(hovermode="closest"))

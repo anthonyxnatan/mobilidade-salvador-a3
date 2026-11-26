@@ -501,7 +501,7 @@ def corrida(onibus_min, carro_min, titulo, sub):
         w = v / mx * 100
         linhas.append(f'<div class="pista"><div class="nome">{ic(icone)}{nome}</div><div class="trilho">'
                       f'<div class="enche" style="--w:{w:.1f}%;--cor:{cor};--d:{1.2 + 1.6 * v / mx:.2f}s"></div></div>'
-                      f'<div class="min">{numero(str(round(v)))}<small> min</small></div></div>')
+                      f'<div class="min">{numero(f"{v:.1f}".replace(".", ","))}<small> min</small></div></div>')
     bloco(f'<div class="corrida"><h4>{esc(titulo)}</h4><div class="sub">{esc(sub)}</div>{"".join(linhas)}</div>')
 
 
